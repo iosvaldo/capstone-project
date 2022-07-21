@@ -1071,3 +1071,72 @@ puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
 puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
 puma (5.3.2) lib/puma/server.rb:438:in `process_client'
 puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2022-07-21 17:58:32 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (9.89ms)
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 6.2ms | Allocations: 7285)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 17:58:36 -0400
+Processing by RoomsController#index as */*
+[active_model_serializers]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (14.85ms)
+Completed 200 OK in 20ms (Views: 8.0ms | ActiveRecord: 7.5ms | Allocations: 3605)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 18:20:27 -0400
+Processing by RoomsController#index as */*
+[active_model_serializers]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (42.99ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 8.7ms | Allocations: 4191)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-21 18:20:33 -0400
+Processing by UsersController#index as */*
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (3.32ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1127)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-21 18:27:55 -0400
+Processing by UsersController#index as HTML
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (27.73ms)
+Completed 200 OK in 48ms (Views: 29.5ms | ActiveRecord: 10.5ms | Allocations: 4233)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-21 18:27:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 18:28:15 -0400
+Processing by RoomsController#index as HTML
+[active_model_serializers]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (3.76ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 1058)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-21 18:28:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-21 18:28:30 -0400
+Processing by UsersController#index as HTML
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (3.91ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1123)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-21 18:28:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
