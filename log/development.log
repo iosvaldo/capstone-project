@@ -1,0 +1,373 @@
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (20.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (107.7ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (51.8ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720200939"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20220720213056)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720213056"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20220720214225)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720214225"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserRooms (20220720215032)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720215032"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:16:22.759482"], ["updated_at", "2022-07-21 18:16:22.759482"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserRoom Load (1.1ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (7517.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (22.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (16.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (105.2ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (43.5ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:24:09.828513"], ["updated_at", "2022-07-21 18:24:09.828513"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:24:09.832628"], ["updated_at", "2022-07-21 18:24:09.832628"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:24:09.861544"], ["updated_at", "2022-07-21 18:24:09.861544"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-07-21 18:24:09.863445"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:24:09.865371"], ["updated_at", "2022-07-21 18:24:09.865371"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (19.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (89.9ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (41.5ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:24:40.828320"], ["updated_at", "2022-07-21 18:24:40.828320"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:24:40.830892"], ["updated_at", "2022-07-21 18:24:40.830892"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:24:40.855912"], ["updated_at", "2022-07-21 18:24:40.855912"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-07-21 18:24:40.857856"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:24:40.859507"], ["updated_at", "2022-07-21 18:24:40.859507"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Adam"], ["password_digest", "$2a$12$wL.i8gi2leoOFvyPBRcna.PgAoFhb7u41KZiU4y6jRjdd2dUXcF16"], ["created_at", "2022-07-21 18:24:41.127075"], ["updated_at", "2022-07-21 18:24:41.127075"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Beddy"], ["password_digest", "$2a$12$.bELELLmIB/Y0HkuCMt3d.JNK/tQGh83gw.PvsSXZeaBrWaVrYmHe"], ["created_at", "2022-07-21 18:24:41.372551"], ["updated_at", "2022-07-21 18:24:41.372551"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Champ"], ["password_digest", "$2a$12$xHbXB68SSZiirzleI8j4A.tZROpVx5rp8Fvtuq1eeR4oYQYG0uHFS"], ["created_at", "2022-07-21 18:24:41.617175"], ["updated_at", "2022-07-21 18:24:41.617175"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.8ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Front-end Dev"], ["description", "Front-end development for the pragmatic developers"], ["created_at", "2022-07-21 18:24:41.625252"], ["updated_at", "2022-07-21 18:24:41.625252"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Back-end Dev"], ["description", "Behind every great website and mobile application is a successful “back-end developer"], ["created_at", "2022-07-21 18:24:41.628236"], ["updated_at", "2022-07-21 18:24:41.628236"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.1ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "General"], ["description", "Discuss a variety of different topics and subjects about software development"], ["created_at", "2022-07-21 18:24:41.630508"], ["updated_at", "2022-07-21 18:24:41.630508"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (24.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (17.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (38.4ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:25:07.872967"], ["updated_at", "2022-07-21 18:25:07.872967"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:25:07.875533"], ["updated_at", "2022-07-21 18:25:07.875533"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages" CASCADE[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_rooms" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220720215032)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220720200939),
+(20220720213056),
+(20220720214225);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-21 18:25:07.900428"], ["updated_at", "2022-07-21 18:25:07.900428"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-07-21 18:25:07.902274"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ac927ebb8be5cbc86dc22b5ae8252809117add25"], ["created_at", "2022-07-21 18:25:07.903891"], ["updated_at", "2022-07-21 18:25:07.903891"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Adam"], ["password_digest", "$2a$12$iclw1fe5BGeuXEUGhHQlcuiAFEs6EJVH7eSGDanCqK/PxFs/j0VmW"], ["created_at", "2022-07-21 18:25:08.168939"], ["updated_at", "2022-07-21 18:25:08.168939"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Beddy"], ["password_digest", "$2a$12$Z289WDZoIQ7iqi/2n3WREONqCOM8jFmp.qNIBPrYbe9Ue7Jg.jiOK"], ["created_at", "2022-07-21 18:25:08.414265"], ["updated_at", "2022-07-21 18:25:08.414265"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Champ"], ["password_digest", "$2a$12$HPKpugSpntXSSvw5aN7ufuw94xAzMcoi8aggryyqhc7fW9eD6pj1W"], ["created_at", "2022-07-21 18:25:08.659716"], ["updated_at", "2022-07-21 18:25:08.659716"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Front-end Dev"], ["description", "Front-end development for the pragmatic developers"], ["created_at", "2022-07-21 18:25:08.668063"], ["updated_at", "2022-07-21 18:25:08.668063"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Back-end Dev"], ["description", "Behind every great website and mobile application is a successful “back-end developer"], ["created_at", "2022-07-21 18:25:08.670989"], ["updated_at", "2022-07-21 18:25:08.670989"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "General"], ["description", "Discuss a variety of different topics and subjects about software development"], ["created_at", "2022-07-21 18:25:08.673032"], ["updated_at", "2022-07-21 18:25:08.673032"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (1.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "My interests are in Front End Engineering"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-21 18:25:08.682744"], ["updated_at", "2022-07-21 18:25:08.682744"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "How much does a software enginner make ?"], ["user_id", 2], ["room_id", 3], ["created_at", "2022-07-21 18:25:08.687754"], ["updated_at", "2022-07-21 18:25:08.687754"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "I love programming 💜 "], ["user_id", 3], ["room_id", 2], ["created_at", "2022-07-21 18:25:08.689383"], ["updated_at", "2022-07-21 18:25:08.689383"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "🙌"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-21 18:25:08.690927"], ["updated_at", "2022-07-21 18:25:08.690927"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (1.0ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["room_id", 3], ["created_at", "2022-07-21 18:25:08.697977"], ["updated_at", "2022-07-21 18:25:08.697977"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["room_id", 2], ["created_at", "2022-07-21 18:25:08.700525"], ["updated_at", "2022-07-21 18:25:08.700525"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 1], ["created_at", "2022-07-21 18:25:08.701954"], ["updated_at", "2022-07-21 18:25:08.701954"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 3], ["created_at", "2022-07-21 18:25:08.703443"], ["updated_at", "2022-07-21 18:25:08.703443"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["room_id", 3], ["created_at", "2022-07-21 18:25:08.704855"], ["updated_at", "2022-07-21 18:25:08.704855"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 1], ["created_at", "2022-07-21 18:25:08.706387"], ["updated_at", "2022-07-21 18:25:08.706387"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserRoom Load (0.6ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserRoom Load (0.6ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserRoom Load (0.5ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
