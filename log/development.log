@@ -1753,3 +1753,425 @@ No serializer found for resource: #<Message id: 1, body: "My interests are in Fr
 Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 5.9ms | Allocations: 4993)
 
 
+Started GET "/user" for 127.0.0.1 at 2022-07-22 10:21:23 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:21:26 -0400
+  
+ArgumentError (Before process_action callback :authenticate_user has not been defined):
+  
+app/controllers/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:21:38 -0400
+  
+ArgumentError (Before process_action callback :authenticate_user has not been defined):
+  
+app/controllers/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:22:04 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (17.88ms)
+Completed 200 OK in 27ms (Views: 15.7ms | ActiveRecord: 10.8ms | Allocations: 7393)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2022-07-22 10:22:11 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (14.17ms)
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 14.6ms | Allocations: 3730)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-07-22 10:22:16 -0400
+Processing by MessagesController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "message"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+No serializer found for resource: #<Message id: 1, body: "My interests are in Front End Engineering", user_id: 1, room_id: 1, created_at: "2022-07-22 13:12:31.337555000 +0000", updated_at: "2022-07-22 13:12:31.337555000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 22ms (Views: 8.3ms | ActiveRecord: 14.3ms | Allocations: 4666)
+
+
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-22 10:22:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 10:23:41 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1733)
+
+
+  
+NoMethodError (undefined method `attributes' for RoomSerializer:Class
+Did you mean?  attr_writer):
+  
+app/serializers/room_serializer.rb:3:in `<class:RoomSerializer>'
+app/serializers/room_serializer.rb:1:in `<main>'
+app/controllers/rooms_controller.rb:5:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:23:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 10:23:42 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1509)
+
+
+  
+NoMethodError (undefined method `attributes' for RoomSerializer:Class
+Did you mean?  attr_writer):
+  
+app/serializers/room_serializer.rb:3:in `<class:RoomSerializer>'
+app/serializers/room_serializer.rb:1:in `<main>'
+app/controllers/rooms_controller.rb:5:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:23:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 10:24:22 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (6.43ms)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 4.0ms | Allocations: 5360)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:24:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 10:35:17 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (3.7ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 6.7ms | Allocations: 7775)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:35:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-22 10:35:21 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (1.86ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 1694)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:35:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:35:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (9.66ms)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 3.7ms | Allocations: 4042)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:35:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/message" for 127.0.0.1 at 2022-07-22 10:35:39 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"message"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1515)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:35:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/messages" for 127.0.0.1 at 2022-07-22 10:35:43 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+No serializer found for resource: #<Message id: 1, body: "My interests are in Front End Engineering", user_id: 1, room_id: 1, created_at: "2022-07-22 13:12:31.337555000 +0000", updated_at: "2022-07-22 13:12:31.337555000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Relation (0.94ms)
+Completed 200 OK in 27ms (Views: 14.6ms | ActiveRecord: 11.1ms | Allocations: 4904)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 10:35:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:36:00 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (2.44ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 1722)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:40:16 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (2.71ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 1722)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:40:19 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1314)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:40:56 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (5.53ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 7.3ms | Allocations: 4152)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:40:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2197)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x0000000000d9a8>
+Did you mean?  super):
+  
+app/controllers/users_controller.rb:22:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:42:02 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 4.3ms | Allocations: 4816)
+
+
+  
+NameError (undefined local variable or method `users' for #<UsersController:0x0000000000eb50>
+Did you mean?  user):
+  
+app/controllers/users_controller.rb:23:in `show'
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:42:05 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (2.28ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2028)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:42:08 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 2546)
+
+
+  
+NameError (undefined local variable or method `users' for #<UsersController:0x0000000000ebf0>
+Did you mean?  user):
+  
+app/controllers/users_controller.rb:23:in `show'
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:42:58 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (4.42ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 3.6ms | Allocations: 4170)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:43:00 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.31ms)
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1544)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-22 10:43:42 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.34ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 1.8ms | Allocations: 1299)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-07-22 10:43:45 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.35ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 1298)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:43:57 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (2.44ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 1722)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 10:49:20 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 3.5ms | Allocations: 3913)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-22 10:49:24 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.44ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1298)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-07-22 10:49:28 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.43ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 1298)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-22 10:50:18 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+[31mUnpermitted parameters: :password_digest, :active, :user[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (3.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osvaldo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 26ms (Views: 1.7ms | ActiveRecord: 5.4ms | Allocations: 5769)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-22 10:52:19 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+[31mUnpermitted parameters: :password_digest, :active, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osvaldo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 1.2ms | ActiveRecord: 5.3ms | Allocations: 5878)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:53:07 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (1.08ms)
+Completed 200 OK in 19ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 3507)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 10:53:23 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (3.71ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 1723)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-22 10:55:50 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+[31mUnpermitted parameters: :password_digest, :active, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "osvaldo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 9ms (Views: 1.1ms | ActiveRecord: 5.6ms | Allocations: 5919)
+
+

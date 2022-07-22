@@ -18,6 +18,18 @@ class MessagesController < ApplicationController
         render json: MessageSerializer.new(message)
     end
 
+    def update
+      message = Message.find(params[:id])
+      message.update!(message_params)
+      render json: message, status: :ok
+    end
+
+    def destroy
+      Message.find(params[:id]).destroy
+      head :no_content
+    end
+
+
     private
 
     def message_params
