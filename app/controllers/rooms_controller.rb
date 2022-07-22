@@ -12,9 +12,9 @@ class RoomsController < ApplicationController
 
   def create
     room = Room.create(rooms_parms)
-    user = User.find(params[:user_id]);
-    if user
-      chat = Chat.create(user_id: user.id, room_id: room.id)
+    users = User.find(params[:user_id]);
+    if users
+      user_rooms = UserRoom.create(user_id: user.id, room_id: room.id)
     end
     render json: RoomSerializer.new(room)
   end

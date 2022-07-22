@@ -9,3 +9,5 @@ class UserRoom < ApplicationRecord
       Room
   end
 end
+
+end

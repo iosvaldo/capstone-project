@@ -1140,3 +1140,616 @@ Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-21 18:28:30 -0400
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/" for 127.0.0.1 at 2022-07-21 20:48:15 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+[active_model_serializers]   [1m[36mRoom Load (1.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (27.45ms)
+Completed 200 OK in 37ms (Views: 8.7ms | ActiveRecord: 20.0ms | Allocations: 7297)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-21 20:48:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-21 20:48:29 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (23.97ms)
+Completed 200 OK in 26ms (Views: 5.3ms | ActiveRecord: 20.9ms | Allocations: 3578)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-21 20:48:37 -0400
+Processing by UsersController#show as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "id"=>"2", "user"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/users_controller.rb:27:in `show'
+Started GET "/users" for 127.0.0.1 at 2022-07-21 20:59:03 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2022-07-21 21:00:01 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input
+app/controllers/application_controller.rb:25: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2022-07-21 21:01:35 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (4.03ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 10.1ms | Allocations: 4588)
+
+
+Started GET "/room" for 127.0.0.1 at 2022-07-21 21:02:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/room"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:02:06 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2157)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000009ce0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:03:48 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 23.1ms | Allocations: 2151)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000ad70>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:03:49 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2134)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000ae10>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:03:51 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2134)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000ae88>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:03:52 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2134)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000af00>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:03:52 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2134)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000af78>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (7282.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (44.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (27.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (63.4ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720200939"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20220720213056)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720213056"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20220720214225)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720214225"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserRooms (20220720215032)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720215032"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-22 01:04:54.775475"], ["updated_at", "2022-07-22 01:04:54.775475"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2022-07-21 21:05:20 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (0.81ms)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 3.3ms | Allocations: 4286)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-21 21:05:23 -0400
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (0.73ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1465)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (35.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (19.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (50.7ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720200939"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20220720213056)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720213056"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20220720214225)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720214225"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserRooms (20220720215032)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720215032"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-22 01:06:58.394276"], ["updated_at", "2022-07-22 01:06:58.394276"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Adam"], ["password_digest", "$2a$12$xgkJDTXXhZVcXYy/q1TBvu2FqehBJQTbV9yuhsEBctHBPn6xnpOJe"], ["created_at", "2022-07-22 01:07:11.091373"], ["updated_at", "2022-07-22 01:07:11.091373"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Beddy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Beddy"], ["password_digest", "$2a$12$oLwnAPCd2exrW1QVKqW9QuVAM4n2oe6vaHv9XJi88i7WGaIq6qCHG"], ["created_at", "2022-07-22 01:07:11.491638"], ["updated_at", "2022-07-22 01:07:11.491638"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Champ"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Champ"], ["password_digest", "$2a$12$WmIKT776JmhbB5abUgp3XuTUfCFJdKK0xBYB88IVZ0i0sG8C8a0M."], ["created_at", "2022-07-22 01:07:11.890537"], ["updated_at", "2022-07-22 01:07:11.890537"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (1.1ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Front-end Dev"], ["description", "Front-end development for the pragmatic developers"], ["created_at", "2022-07-22 01:07:11.897879"], ["updated_at", "2022-07-22 01:07:11.897879"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Back-end Dev"], ["description", "Behind every great website and mobile application is a successful “back-end developer"], ["created_at", "2022-07-22 01:07:11.901508"], ["updated_at", "2022-07-22 01:07:11.901508"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.1ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "General"], ["description", "Discuss a variety of different topics and subjects about software development"], ["created_at", "2022-07-22 01:07:11.904357"], ["updated_at", "2022-07-22 01:07:11.904357"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "My interests are in Front End Engineering"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-22 01:07:11.912934"], ["updated_at", "2022-07-22 01:07:11.912934"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "How much does a software enginner make ?"], ["user_id", 2], ["room_id", 3], ["created_at", "2022-07-22 01:07:11.916249"], ["updated_at", "2022-07-22 01:07:11.916249"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "I love programming 💜 "], ["user_id", 3], ["room_id", 2], ["created_at", "2022-07-22 01:07:11.918244"], ["updated_at", "2022-07-22 01:07:11.918244"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "🙌"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-22 01:07:11.921083"], ["updated_at", "2022-07-22 01:07:11.921083"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (36.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (20.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (127.1ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (60.8ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720200939"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20220720213056)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720213056"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20220720214225)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720214225"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserRooms (20220720215032)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720215032"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-22 01:08:34.263042"], ["updated_at", "2022-07-22 01:08:34.263042"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (35.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (21.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (122.9ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (58.5ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1087325618115650655)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220720200939)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "active" character varying DEFAULT 'inactive', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720200939"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20220720213056)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "body" text, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720213056"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20220720214225)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720214225"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserRooms (20220720215032)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "user_rooms" ("id" bigserial primary key, "user_id" integer, "room_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720215032"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-22 01:09:20.446277"], ["updated_at", "2022-07-22 01:09:20.446277"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1087325618115650655)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Adam"], ["password_digest", "$2a$12$B3ICbPuYCIXbGwj3POGBBOPC7.ZkNU8nYc0Oyh1Vt.OBBaQZtcQmq"], ["created_at", "2022-07-22 01:09:24.904951"], ["updated_at", "2022-07-22 01:09:24.904951"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Beddy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Beddy"], ["password_digest", "$2a$12$WsjKvDtFIeUTQ6veL.t7QuLE65EYjGF004mDnp0DyIQiial/fGlye"], ["created_at", "2022-07-22 01:09:25.306075"], ["updated_at", "2022-07-22 01:09:25.306075"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Champ"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Champ"], ["password_digest", "$2a$12$PvhcupWHlLv69a8L8hIYvesmCMp1ikafhvCl7CD695eK6QtrMKPJK"], ["created_at", "2022-07-22 01:09:25.705758"], ["updated_at", "2022-07-22 01:09:25.705758"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Front-end Dev"], ["description", "Front-end development for the pragmatic developers"], ["created_at", "2022-07-22 01:09:25.713257"], ["updated_at", "2022-07-22 01:09:25.713257"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Back-end Dev"], ["description", "Behind every great website and mobile application is a successful “back-end developer"], ["created_at", "2022-07-22 01:09:25.716335"], ["updated_at", "2022-07-22 01:09:25.716335"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "General"], ["description", "Discuss a variety of different topics and subjects about software development"], ["created_at", "2022-07-22 01:09:25.718873"], ["updated_at", "2022-07-22 01:09:25.718873"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "My interests are in Front End Engineering"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-22 01:09:25.732681"], ["updated_at", "2022-07-22 01:09:25.732681"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "How much does a software enginner make ?"], ["user_id", 2], ["room_id", 3], ["created_at", "2022-07-22 01:09:25.736143"], ["updated_at", "2022-07-22 01:09:25.736143"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "I love programming 💜 "], ["user_id", 3], ["room_id", 2], ["created_at", "2022-07-22 01:09:25.738846"], ["updated_at", "2022-07-22 01:09:25.738846"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "🙌"], ["user_id", 1], ["room_id", 1], ["created_at", "2022-07-22 01:09:25.741113"], ["updated_at", "2022-07-22 01:09:25.741113"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (1.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["room_id", 3], ["created_at", "2022-07-22 01:09:25.758210"], ["updated_at", "2022-07-22 01:09:25.758210"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["room_id", 2], ["created_at", "2022-07-22 01:09:25.762314"], ["updated_at", "2022-07-22 01:09:25.762314"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 1], ["created_at", "2022-07-22 01:09:25.765737"], ["updated_at", "2022-07-22 01:09:25.765737"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 3], ["created_at", "2022-07-22 01:09:25.770932"], ["updated_at", "2022-07-22 01:09:25.770932"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["room_id", 3], ["created_at", "2022-07-22 01:09:25.776331"], ["updated_at", "2022-07-22 01:09:25.776331"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUserRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["room_id", 1], ["created_at", "2022-07-22 01:09:25.782289"], ["updated_at", "2022-07-22 01:09:25.782289"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for 127.0.0.1 at 2022-07-21 21:09:48 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (7.45ms)
+Completed 200 OK in 18ms (Views: 10.1ms | ActiveRecord: 5.3ms | Allocations: 7364)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:09:56 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 3.4ms | Allocations: 2167)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006978>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:10:47 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (9.37ms)
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 9.6ms | Allocations: 4555)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (1.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUserRoom Load (0.4ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:12:55 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (8.73ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 5.0ms | Allocations: 6530)
+
+
+  
+NoMethodError (undefined method `users' for #<Room:0x00000001194f9d80>):
+  
+app/serializers/room_serializer.rb:5:in `block in <class:RoomSerializer>'
+app/controllers/rooms_controller.rb:5:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-21 21:13:26 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RoomSerializer (5.76ms)
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 6.4ms | Allocations: 4454)
+
+
+Started GET "/message" for 127.0.0.1 at 2022-07-21 21:14:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/message"):
+  
+Started GET "/messages" for 127.0.0.1 at 2022-07-21 21:14:08 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for MessagesController
+Did you mean?  render_validation_errors
+               record_not_found
+               authenticate_user
+               current_user):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/userrooms" for 127.0.0.1 at 2022-07-21 21:14:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/userrooms"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-21 21:14:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+Started GET "/messages" for 127.0.0.1 at 2022-07-21 21:14:42 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for MessagesController
+Did you mean?  render_validation_errors
+               record_not_found
+               authenticate_user
+               current_user):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/messages" for 127.0.0.1 at 2022-07-21 21:15:28 -0400
+Processing by MessagesController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "message"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mMessage Load (12.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+No serializer found for resource: #<Message id: 1, body: "My interests are in Front End Engineering", user_id: 1, room_id: 1, created_at: "2022-07-22 01:09:25.732681000 +0000", updated_at: "2022-07-22 01:09:25.732681000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Relation (0.39ms)
+Completed 200 OK in 32ms (Views: 11.4ms | ActiveRecord: 24.4ms | Allocations: 5495)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-07-21 21:17:36 -0400
+Processing by MessagesController#index as */*
+  Parameters: {"data"=>{"id"=>"2", "type"=>"room", "attributes"=>{"id"=>2, "name"=>"full-stack developer", "description"=>"testtestestetetstetsr"}}, "message"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+No serializer found for resource: #<Message id: 1, body: "My interests are in Front End Engineering", user_id: 1, room_id: 1, created_at: "2022-07-22 01:09:25.732681000 +0000", updated_at: "2022-07-22 01:09:25.732681000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Relation (0.36ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 5.9ms | Allocations: 4993)
+
+
