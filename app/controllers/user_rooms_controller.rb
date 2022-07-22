@@ -15,6 +15,7 @@ class UserRoomsController < ApplicationController
         end
         
     end
+    
     def leave
         room = Room.find(params[:room_id])
         user_rooms = UserRoom.find_by(user_id: params[:user_id],room_id: room.id)
