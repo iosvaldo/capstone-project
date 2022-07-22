@@ -2175,3 +2175,26 @@ Processing by UsersController#create as */*
 Completed 422 Unprocessable Entity in 9ms (Views: 1.1ms | ActiveRecord: 5.6ms | Allocations: 5919)
 
 
+Started GET "/users" for 127.0.0.1 at 2022-07-22 11:07:43 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserSerializer (8.14ms)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 7.9ms | Allocations: 7362)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-07-22 11:07:49 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive", "id"=>"1", "user"=>{"username"=>"osvaldo", "password_digest"=>"[FILTERED]", "active"=>"inactive"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.61ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 0.8ms | Allocations: 1598)
+
+
