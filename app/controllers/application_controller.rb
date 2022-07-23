@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
   rescue_from ActiveRecord::RecordInvalid, with: :render_validation_errors
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   def current_user
     @user ||= User.find_by_id(session[:user_id])

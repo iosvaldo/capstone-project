@@ -1,7 +1,4 @@
-class RoomSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :id, :name, :description
-  # attribute :users do |room|
-  #   UserSerializer.new(room.users.uniq)
-  # end
+class RoomSerializer < ActiveModel::Serializer
+  # include FastJsonapi::ObjectSerializer
+  attributes :id, :name, :description,:users
 end
