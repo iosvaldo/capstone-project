@@ -13,11 +13,12 @@ class RoomsController < ApplicationController
 
   def create
     room = Room.create(rooms_params)
-    user = User.find_by(params[:user_id]);
-    if user
+    users = User.find_by(params[:user_id]);
+    if 
       user_rooms = UserRoom.create(user_id: user.id, room_id: room.id)
-    end
+    else
     render json: room
+    end
   end
 
   private

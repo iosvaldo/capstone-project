@@ -7581,3 +7581,1050 @@ For historical reasons, it may run twice, so it has to be idempotent.
 Check the "Autoloading and Reloading Constants" guide to learn more about how
 Rails autoloads and reloads.
  (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:30:50 -0400
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ef0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:30:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:30:59 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2210)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007210>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:31:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:32:13 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2202)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008610>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:32:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:32:14 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000087a0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:32:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:32:14 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008930>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:32:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:32:58 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ec8>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:32:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:33 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008430>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008660>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000087f0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008980>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008b10>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008ca0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008e30>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008fc0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:33:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:42 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ef0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:43 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2210)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007210>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:43 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000073f0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007580>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007710>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000078a0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007a30>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007bc0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007d50>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:35:45 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007ee0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:35:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:36:41 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ec8>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:36:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:22 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008408>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008660>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000087f0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008980>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008b10>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:24 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008ca0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:42 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2202)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000a050>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:44 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000000a1e0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:37:58 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ec8>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:37:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:33 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2210)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007260>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007440>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:34 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000075d0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007760>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000078f0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007a80>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000007c10>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:58 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2202)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000008fe8>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:38:59 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2188)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x000000000091c8>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:38:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:41:31 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000006ef0>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:41:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:41:46 -0400
+Processing by RoomsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2206)
+
+
+  
+NameError (undefined local variable or method `users' for #<RoomsController:0x00000000008430>
+Did you mean?  users_url):
+  
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:41:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:41:59 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (3.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (56.24ms)
+Completed 200 OK in 143ms (Views: 55.1ms | ActiveRecord: 46.6ms | Allocations: 30418)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:41:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:42:19 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.24ms)
+Completed 200 OK in 25ms (Views: 17.3ms | ActiveRecord: 5.3ms | Allocations: 16480)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:42:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:42:24 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.04ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 2.9ms | Allocations: 16478)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:42:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:42:27 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.8ms)
+Completed 200 OK in 68ms (Views: 24.4ms | ActiveRecord: 42.4ms | Allocations: 16471)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:42:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-22 22:43:06 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (16.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.96ms)
+Completed 200 OK in 106ms (Views: 48.4ms | ActiveRecord: 42.8ms | Allocations: 31975)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-22 22:43:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-22 22:43:15 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/login" for 127.0.0.1 at 2022-07-22 22:43:20 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 201 Created in 411ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 1882)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-22 22:43:32 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 687)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-22 22:43:40 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"joe", "password"=>"[FILTERED]", "session"=>{"username"=>"joe", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 201 Created in 438ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1369)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-22 22:43:42 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms | Allocations: 663)
+
+
