@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
+  get "/me", to: "users#show" ## retrieveing the user's data from the database using the sessions hash
+  post "/signup", to: "users#create"
+  post "/login", to: "sessions#create" ## mapping the user create method for a POST request to /login
+  delete "/logout", to: "sessions#destroy"
+
   root 'rooms#index'
   mount ActionCable.server => './cable' 
 end

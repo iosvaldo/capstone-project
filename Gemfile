@@ -28,7 +28,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
 
 # JWT for token Authentication
-gem 'jwt'
+# gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,3 +54,5 @@ group :test do
 end
 
 gem "active_model_serializers", "~> 0.10.12"
+
+gem 'before_actions'
