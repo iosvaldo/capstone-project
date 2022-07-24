@@ -10143,3 +10143,1053 @@ Processing by UserRoomsController#show as */*
 Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 4.2ms | Allocations: 2862)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/users" for 127.0.0.1 at 2022-07-24 13:50:00 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user_id"=>12, "room_id"=>12, "user"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 14.8ms | Allocations: 7235)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 13:50:03 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user_id"=>12, "room_id"=>12, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1283)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 13:50:45 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"sinclair", "password"=>"[FILTERED]", "user"=>{"username"=>"sinclair"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1156)
+
+
+  
+NoMethodError (undefined method `empty?' for 4444444:Integer):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-07-24 13:50:56 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"sinclair", "password"=>"[FILTERED]", "user"=>{"username"=>"sinclair"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sinclair"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "sinclair"], ["password_digest", "$2a$12$FEyCgQ5bKtLMZFTQgM3maeCZZHiBPhmOH5c91x70SZ3C5inQh8CIS"], ["created_at", "2022-07-24 17:50:57.051941"], ["updated_at", "2022-07-24 17:50:57.051941"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 201 Created in 275ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 3109)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2022-07-24 13:51:44 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/users" for 127.0.0.1 at 2022-07-24 13:52:37 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclair", "password"=>"[FILTERED]", "user"=>{"username"=>"sinclair"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 7328)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2022-07-24 13:53:04 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-24 13:53:27 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclaired", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2179)
+
+
+Started GET "/users/18" for 127.0.0.1 at 2022-07-24 13:53:33 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2860)
+
+
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:53:39 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "active" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["active", nil], ["updated_at", "2022-07-24 17:53:39.884153"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 8.0ms | Allocations: 4254)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:55:17 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "sinclaired"], ["updated_at", "2022-07-24 17:55:17.814668"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 20.5ms | Allocations: 5811)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:34:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:56:30 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 5.2ms | Allocations: 5126)
+
+
+  
+ArgumentError (Unrecognized status code :o):
+  
+app/controllers/users_controller.rb:34:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:56:55 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.9ms | Allocations: 6570)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0x0000000000b2e8>):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:57:58 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.7ms | Allocations: 6734)
+
+
+  
+NoMethodError (undefined method `room' for #<User:0x000000014ae0ae70>):
+  
+app/controllers/users_controller.rb:32:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:58:52 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 15.7ms | Allocations: 6762)
+
+
+  
+NoMethodError (undefined method `message' for #<User:0x000000015054b680>):
+  
+app/controllers/users_controller.rb:32:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:59:42 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.2ms | Allocations: 6748)
+
+
+  
+NoMethodError (undefined method `message' for #<User:0x0000000128817cb0>):
+  
+app/controllers/users_controller.rb:32:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 13:59:52 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 3.1ms | Allocations: 6741)
+
+
+  
+NoMethodError (undefined method `room' for #<User:0x000000013a14d6e8>):
+  
+app/controllers/users_controller.rb:32:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:00:15 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 3.0ms | Allocations: 5156)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:00:34 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 17.9ms | Allocations: 5148)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:00:55 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclaired"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.4ms | Allocations: 5198)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 14:01:06 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclaired", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 12.5ms | Allocations: 2274)
+
+
+Started GET "/users/18" for 127.0.0.1 at 2022-07-24 14:01:21 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclaired", "id"=>"18", "user"=>{"username"=>"sinclaired"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:01:34 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair", "id"=>"18", "user"=>{"username"=>"sinclair"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "sinclair"], ["updated_at", "2022-07-24 18:01:34.572974"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.5ms | Allocations: 3135)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started GET "/users/18" for 127.0.0.1 at 2022-07-24 14:02:38 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair", "id"=>"18", "user"=>{"username"=>"sinclair"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 770)
+
+
+Started GET "/users/18" for 127.0.0.1 at 2022-07-24 14:04:01 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair", "id"=>"18", "user"=>{"username"=>"sinclair"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 14.5ms | Allocations: 3433)
+
+
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:04:13 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-xd", "id"=>"18", "user"=>{"username"=>"sinclair-xd"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-xd"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (11.9ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "sinclair-xd"], ["updated_at", "2022-07-24 18:04:13.664718"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 16.9ms | Allocations: 3358)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:34:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:04:29 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-xd", "id"=>"18", "user"=>{"username"=>"sinclair-xd"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-xd"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 19.6ms | Allocations: 5217)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:04:47 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-xd", "id"=>"18", "user"=>{"username"=>"sinclair-xd"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-xd"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.5ms | Allocations: 5217)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:33:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:05:17 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-xd", "id"=>"18", "user"=>{"username"=>"sinclair-xd"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-xd"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.3ms | Allocations: 5219)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:32:in `update'
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:06:03 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:32: syntax error, unexpected ',', expecting =>
+...izer.new(user).serialized_json, status: :ok
+...                              ^
+):
+  
+app/controllers/users_controller.rb:32: syntax error, unexpected ',', expecting =>
+app/controllers/users_controller.rb:32: syntax error, unexpected ',', expecting =>
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:06:16 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-xd", "id"=>"18", "user"=>{"username"=>"sinclair-xd"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-xd"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 24.7ms | Allocations: 5241)
+
+
+Started PATCH "/users/18" for 127.0.0.1 at 2022-07-24 14:08:26 -0400
+Processing by UsersController#update as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"18", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+[31mUnpermitted parameters: :id, :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-HAPPY"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "sinclair-HAPPY"], ["updated_at", "2022-07-24 18:08:26.604748"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "sinclair-HAPPY"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `update'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 22.9ms | Allocations: 7599)
+
+
+Started DELETE "/users/18" for 127.0.0.1 at 2022-07-24 14:09:05 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"18", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:37:in `destroy'
+Completed 204 No Content in 16ms (ActiveRecord: 8.7ms | Allocations: 1740)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2022-07-24 14:10:00 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"17", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 4.2ms | Allocations: 1159)
+
+
+Started GET "/users/16" for 127.0.0.1 at 2022-07-24 14:10:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"16", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 692)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-07-24 14:10:09 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 10.1ms | Allocations: 4192)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2022-07-24 14:10:19 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"17", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 680)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2022-07-24 14:10:39 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"17", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 1151)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 14:10:43 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 4173)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:10:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"2", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 684)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/users" for 127.0.0.1 at 2022-07-24 14:11:32 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 7235)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:11:38 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"sinclair-HAPPY", "id"=>"2", "user"=>{"username"=>"sinclair-HAPPY"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1163)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:11:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 701)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 14:11:49 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2087)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-07-24 14:11:53 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 709)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-24 14:14:02 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 4456)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:03 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 614)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:04 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:04 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 379)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:04 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:05 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:05 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:14:05 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 366)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:13 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 493)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:15 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 366)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:16 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:16 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 370)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:16 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:16 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:17 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 376)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:17 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:17 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:17 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:17 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 366)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 366)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:18 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 370)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:19 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:19 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 360)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-24 14:15:35 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 4458)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-24 14:15:36 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 883)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-24 14:15:37 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 879)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:38 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 616)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:15:39 -0400
+Processing by SessionsController#destroy as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.02ms)
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:14 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:27 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:28 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:28 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:29 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:29 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:36 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/sessions_controller.rb:20: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/sessions_controller.rb:20: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/sessions_controller.rb:20: syntax error, unexpected end-of-input, expecting `end'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:16:51 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 236)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-24 14:17:01 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 256ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 5001)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 14:17:03 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 14:17:13 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2079)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:17:20 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 11.4ms | Allocations: 773)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:17:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 2611)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:26:in `show'
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:18:02 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 1826)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:18:29 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 5.7ms | Allocations: 1976)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:19:37 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.7ms | Allocations: 5947)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x0000000118a3bd80>):
+  
+app/serializers/user_serializer.rb:5:in `block in <class:UserSerializer>'
+app/controllers/users_controller.rb:26:in `show'
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:19:56 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4055)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:20:07 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 12.8ms | Allocations: 1926)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 14:20:15 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 4066)
+
+

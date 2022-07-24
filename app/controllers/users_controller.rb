@@ -22,15 +22,14 @@ class UsersController < ApplicationController
 end
 
   def show
-    user = User.find_by(id: session[:user_id])
+    user = User.find_by(params[:user_id])
     render json: UserSerializer.new(user).serialized_json, status: :ok
   end
 
   def update
     user = User.find(params[:id])
-    user.update(active: params[:active]);
-    # ActionCable.server.broadcast 'appear_channel', json_response(user)
-    render json: user
+    user.update!(user_params)
+    render json: UserSerializer.new(user).serialized_json, status: :ok
   end
 
   def destroy
