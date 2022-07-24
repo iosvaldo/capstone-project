@@ -8976,3 +8976,656 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 659)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-24 11:48:48 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/login" for 127.0.0.1 at 2022-07-24 11:48:54 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 201 Created in 282ms (Views: 5.2ms | ActiveRecord: 4.3ms | Allocations: 8828)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 11:48:57 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 3ms (ActiveRecord: 0.4ms | Allocations: 690)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:49:04 -0400
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:49:36 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Adamm", "password"=>"[FILTERED]", "user"=>{"username"=>"Adamm"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.6ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 27.6ms | Allocations: 4979)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-07-24 11:49:57 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"Adamm", "password"=>"[FILTERED]", "id"=>"2", "user"=>{"username"=>"Adamm"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 0.8ms | Allocations: 1354)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:50:22 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"matt", "password"=>"[FILTERED]", "user"=>{"username"=>"matt"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "matt"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (15.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "matt"], ["password_digest", "$2a$12$2GuQIJhc/Kfwl7vtazAOf.RbTQkiyKbI0xjchEAsafbGUzjKCkUwe"], ["created_at", "2022-07-24 15:50:22.408428"], ["updated_at", "2022-07-24 15:50:22.408428"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 500 Internal Server Error in 305ms (Views: 0.8ms | ActiveRecord: 17.7ms | Allocations: 10617)
+
+
+  
+NoMethodError (undefined method `creaye' for #<Class:0x00000001069cf4a8>
+Did you mean?  create
+               create!):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:50:40 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"matt", "password"=>"[FILTERED]", "user"=>{"username"=>"matt"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "matt"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 422 Unprocessable Entity in 279ms (Views: 1.9ms | ActiveRecord: 13.0ms | Allocations: 8129)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:50:47 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"matt123", "password"=>"[FILTERED]", "user"=>{"username"=>"matt123"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "matt123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "matt123"], ["password_digest", "$2a$12$z2zO2vboXNeLg2E2v0u9EuJeb/vNJkhS4qbatoFgoEJ5iMbHOCC.K"], ["created_at", "2022-07-24 15:50:48.061119"], ["updated_at", "2022-07-24 15:50:48.061119"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.8ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "matt123"], ["description", "This is the beginning of your new room"], ["created_at", "2022-07-24 15:50:48.070775"], ["updated_at", "2022-07-24 15:50:48.070775"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 287ms (Views: 1.5ms | ActiveRecord: 5.5ms | Allocations: 10819)
+
+
+  
+NameError (uninitialized constant UsersController::UserRooms):
+  
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:53:21 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"drake", "password"=>"[FILTERED]", "user"=>{"username"=>"drake"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "drake"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "drake"], ["password_digest", "$2a$12$My2wnPcRDngXcwMcVDOY0.lIbXH8BBHX1wyJhFSZBcDVHrawJtylq"], ["created_at", "2022-07-24 15:53:22.210790"], ["updated_at", "2022-07-24 15:53:22.210790"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 20.2ms | Allocations: 5794)
+
+
+  
+NoMethodError (undefined method `serialized_json' for #<UserSerializer:0x0000000113d962c8>
+Did you mean?  serializer_class):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:54:20 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"drake", "password"=>"[FILTERED]", "user"=>{"username"=>"drake"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "drake"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 422 Unprocessable Entity in 266ms (Views: 1.0ms | ActiveRecord: 3.2ms | Allocations: 6034)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:54:32 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"barnes", "password"=>"[FILTERED]", "user"=>{"username"=>"barnes"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "barnes"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "barnes"], ["password_digest", "$2a$12$8tH5f0CVBKR3qtD/dgnAdukqE0vo.lNW5/ARv0ftue5cG6SAI1ER."], ["created_at", "2022-07-24 15:54:32.628777"], ["updated_at", "2022-07-24 15:54:32.628777"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 285ms (ActiveRecord: 1.7ms | Allocations: 5078)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x0000000125b03f80>):
+  
+app/serializers/user_serializer.rb:5:in `block in <class:UserSerializer>'
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:54:55 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "david"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "david"], ["password_digest", "$2a$12$pBH/zr3HiRyYdMrNeAwxEemVcQjvT0.xj4ybcoBpqBXrXcWywF7Cu"], ["created_at", "2022-07-24 15:54:56.251894"], ["updated_at", "2022-07-24 15:54:56.251894"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 201 Created in 271ms (Views: 1.0ms | ActiveRecord: 18.5ms | Allocations: 6009)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:55:30 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 2129)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:56:11 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 6.6ms | Allocations: 3363)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:6:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:56:43 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 3.3ms | Allocations: 4671)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:56:52 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 4.9ms | Allocations: 4710)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:57:07 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 3.5ms | Allocations: 4690)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/users_controller.rb:6:in `index'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 11:57:27 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"david", "password"=>"[FILTERED]", "user"=>{"username"=>"david"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 5.1ms | Allocations: 5129)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 11:57:54 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"andre", "password"=>"[FILTERED]", "user"=>{"username"=>"andre"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "andre"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "andre"], ["password_digest", "$2a$12$DWtQkeoid67BZmwxbOjaTuV4SV0SCq.BBYcKi8EUVjX/L8yL4i5hy"], ["created_at", "2022-07-24 15:57:54.979716"], ["updated_at", "2022-07-24 15:57:54.979716"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 201 Created in 284ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 3344)
+
+
+Started POST "/users/16" for 127.0.0.1 at 2022-07-24 11:58:06 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/16"):
+  
+Started POST "/users/16" for 127.0.0.1 at 2022-07-24 11:59:20 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/16"):
+  
+Started GET "/users/16" for 127.0.0.1 at 2022-07-24 11:59:58 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"andre", "password"=>"[FILTERED]", "id"=>"16", "user"=>{"username"=>"andre"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 3.2ms | Allocations: 3836)
+
+
+Started GET "/users/15" for 127.0.0.1 at 2022-07-24 12:00:07 -0400
+Processing by UsersController#show as */*
+  Parameters: {"username"=>"andre", "password"=>"[FILTERED]", "id"=>"15", "user"=>{"username"=>"andre"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1158)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-24 12:00:37 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "user"=>{"username"=>"Cobb"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Cobb"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Cobb"], ["password_digest", "$2a$12$YDVoXPpm2GELUUO33n.VF.C7w6DJrx2O6tWhiMHJL1PYIVbhUnj2i"], ["created_at", "2022-07-24 16:00:37.986752"], ["updated_at", "2022-07-24 16:00:37.986752"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 201 Created in 282ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 3327)
+
+
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:01:08 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameters: :username, :password, :room[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:20:in `create'
+  [1m[36mRoom Create (2.0ms)[0m  [1m[32mINSERT INTO "rooms" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2022-07-24 16:01:08.872010"], ["updated_at", "2022-07-24 16:01:08.872010"]]
+  ↳ app/controllers/rooms_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:20:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 10.7ms | Allocations: 7511)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x00000000014a28>
+Did you mean?  users
+               @user):
+  
+app/controllers/rooms_controller.rb:23:in `create'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:01:14 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 2744)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x00000001069d7b58>):
+  
+app/controllers/rooms_controller.rb:8:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:02:34 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 21.7ms | Allocations: 6133)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x0000000122e88f78>):
+  
+app/controllers/rooms_controller.rb:9:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:03:56 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 15.5ms | Allocations: 6317)
+
+
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:6:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:04:26 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 14.3ms | Allocations: 6297)
+
+
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:6:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:04:52 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 8.4ms | Allocations: 6297)
+
+
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:5:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:05:08 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 15.1ms | Allocations: 3702)
+
+
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/room_serializer.rb:6: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:7:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:05:32 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 6.2ms | Allocations: 4075)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/rooms_controller.rb:7:in `index'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 12:05:54 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "room"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:6:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 13]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 14]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 9.6ms | Allocations: 24005)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2022-07-24 12:06:24 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"username"=>"Cobb", "password"=>"[FILTERED]", "id"=>"1", "room"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 2259)
+
+
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:07:06 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameter: :room[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mRoom Create (1.1ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fitness room"], ["description", "we love to workout in this room"], ["created_at", "2022-07-24 16:07:06.967441"], ["updated_at", "2022-07-24 16:07:06.967441"]]
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.7ms | Allocations: 5112)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoomsController:0x0000000001da38>
+Did you mean?  users
+               @user):
+  
+app/controllers/rooms_controller.rb:18:in `create'
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:08:19 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameter: :room[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fitness room"], ["description", "we love to workout in this room"], ["created_at", "2022-07-24 16:08:19.396147"], ["updated_at", "2022-07-24 16:08:19.396147"]]
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 20.3ms | Allocations: 7718)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/rooms_controller.rb:20:in `create'
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:08:33 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameter: :room[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fitness room"], ["description", "we love to workout in this room"], ["created_at", "2022-07-24 16:08:33.671156"], ["updated_at", "2022-07-24 16:08:33.671156"]]
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 11.0ms | Allocations: 7699)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 0)):
+  
+app/controllers/rooms_controller.rb:20:in `create'
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:10:10 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameter: :room[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mRoom Create (4.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fitness room"], ["description", "we love to workout in this room"], ["created_at", "2022-07-24 16:10:10.881296"], ["updated_at", "2022-07-24 16:10:10.881296"]]
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 42.7ms | Allocations: 9541)
+
+
+  
+NoMethodError (undefined method `username' for #<Room:0x0000000122ee0c50>
+Did you mean?  users):
+  
+app/controllers/rooms_controller.rb:21:in `create'
+Started POST "/rooms" for 127.0.0.1 at 2022-07-24 12:10:30 -0400
+Processing by RoomsController#create as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[31mUnpermitted parameter: :room[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fitness room"], ["description", "we love to workout in this room"], ["created_at", "2022-07-24 16:10:30.469567"], ["updated_at", "2022-07-24 16:10:30.469567"]]
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:15:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 19]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 13.1ms | Allocations: 9962)
+
+
+Started POST "/rooms/19" for 127.0.0.1 at 2022-07-24 13:04:00 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/rooms/19"):
+  
+Started GET "/rooms/19" for 127.0.0.1 at 2022-07-24 13:04:17 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "id"=>"19", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 19]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 51ms (Views: 0.3ms | ActiveRecord: 8.5ms | Allocations: 5401)
+
+
