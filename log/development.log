@@ -9881,3 +9881,265 @@ Processing by SessionsController#destroy as */*
 Completed 401 Unauthorized in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1417)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:34:19 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:35:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:35:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/user_room" for 127.0.0.1 at 2022-07-24 13:36:05 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user_room"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:36:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:36:40 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user_room"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 4.9ms | Allocations: 665)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:8:in `user'
+app/controllers/application_controller.rb:20:in `authenticate_user'
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:37:06 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user_room"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.3ms | Allocations: 572)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:10:in `user'
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:37:22 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user_room"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 2.1ms | Allocations: 2209)
+
+
+  
+NameError (undefined local variable or method `user' for #<UserRoomsController:0x0000000000aa28>
+Did you mean?  super):
+  
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:37:47 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user_room"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 15.3ms | Allocations: 567)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:10:in `user'
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started GET "/users" for 127.0.0.1 at 2022-07-24 13:38:26 -0400
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 6809)
+
+
+Started GET "/romos" for 127.0.0.1 at 2022-07-24 13:38:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/romos"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 13:38:42 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.3ms | Allocations: 282)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:10:in `user'
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started GET "/room" for 127.0.0.1 at 2022-07-24 13:38:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/room"):
+  
+Started GET "/room" for 127.0.0.1 at 2022-07-24 13:39:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/room"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 13:39:08 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 9.1ms | Allocations: 567)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:10:in `user'
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 13:41:10 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "room"=>{"name"=>"fitness room", "description"=>"we love to workout in this room"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 2.2ms | Allocations: 567)
+
+
+  
+ArgumentError (Unsupported argument type: 17 (Integer)):
+  
+app/controllers/application_controller.rb:10:in `user'
+app/controllers/application_controller.rb:22:in `authenticate_user'
+Started POST "/login" for 127.0.0.1 at 2022-07-24 13:41:55 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 251ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 4646)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 13:41:57 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 242)
+
+
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 13:42:36 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"name"=>"fitness room", "description"=>"we love to workout in this room", "user_room"=>{}}
+  [1m[36mUserRoom Load (0.3ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms"[0m
+  ↳ app/controllers/user_rooms_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 2.6ms | Allocations: 4727)
+
+
+Started POST "/user_rooms" for 127.0.0.1 at 2022-07-24 13:43:47 -0400
+Processing by UserRoomsController#create as */*
+  Parameters: {"user_id"=>12, "room_id"=>12, "user_room"=>{"user_id"=>12, "room_id"=>12}}
+[31mUnpermitted parameter: :user_room[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_rooms_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/user_rooms_controller.rb:11:in `create'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/user_rooms_controller.rb:11:in `create'
+  [1m[36mUserRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 12], ["room_id", 12], ["created_at", "2022-07-24 17:43:47.829412"], ["updated_at", "2022-07-24 17:43:47.829412"]]
+  ↳ app/controllers/user_rooms_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_rooms_controller.rb:11:in `create'
+[active_model_serializers] Rendered UserRoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 10506)
+
+
+Started GET "/user_rooms/2" for 127.0.0.1 at 2022-07-24 13:45:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms/2"):
+  
+Started GET "/user_rooms/12" for 127.0.0.1 at 2022-07-24 13:45:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms/12"):
+  
+Started GET "/user_rooms/4" for 127.0.0.1 at 2022-07-24 13:45:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_rooms/4"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/user_rooms/4" for 127.0.0.1 at 2022-07-24 13:46:14 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserRoomsController#show as */*
+  Parameters: {"user_id"=>12, "room_id"=>12, "id"=>"4", "user_room"=>{"user_id"=>12, "room_id"=>12}}
+  [1m[36mUserRoom Load (0.6ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserRoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 5.1ms | Allocations: 6314)
+
+
+Started GET "/user_rooms/2" for 127.0.0.1 at 2022-07-24 13:47:02 -0400
+Processing by UserRoomsController#show as */*
+  Parameters: {"user_id"=>12, "room_id"=>12, "id"=>"2", "user_room"=>{"user_id"=>12, "room_id"=>12}}
+  [1m[36mUserRoom Load (0.1ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered UserRoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 4.2ms | Allocations: 2862)
+
+

@@ -4,8 +4,10 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   before_action :authenticate_user
 
-  def current_user
-    @user ||= User.find_by_id(session[:user_id])
+
+
+  def user
+    @user ||= User.find_by(session[:user_id])
   end
 
   def render_validation_errors(e)
@@ -17,7 +19,7 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate_user
-    if current_user
+    if user
     return 
     render json: { errors: "You must be logged in to do that." }, status: :unauthorized
     end

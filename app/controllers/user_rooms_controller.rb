@@ -1,4 +1,15 @@
 class UserRoomsController < ApplicationController
+    skip_before_action :authenticate_user
+
+    def index
+        user_rooms = UserRoom.all
+        render json: user_rooms
+    end
+
+    def show
+        user_room = UserRoom.find(params[:id])
+        render json: user_room, status: :ok
+    end
 
     def create
         # user = User.find_by(username: params[:username])

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :user_rooms, only: [:create]
+  resources :user_rooms, only: [:index,:show, :create]
   resources :rooms, only: [:index, :show, :create]
   resources :messages, only: [:index, :create]
   resources :users
