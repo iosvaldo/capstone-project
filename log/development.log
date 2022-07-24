@@ -13119,3 +13119,265 @@ Processing by MessagesController#show as */*
 Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 2.0ms | Allocations: 1754)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-24 19:35:29 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.6ms | Allocations: 8695)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x000000014cc68a48>):
+  
+app/serializers/user_serializer.rb:5:in `block in <class:UserSerializer>'
+app/controllers/users_controller.rb:26:in `show'
+Started POST "/login" for 127.0.0.1 at 2022-07-24 19:35:33 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 0.2ms | Allocations: 3212)
+
+
+  
+NoMethodError (undefined method `rooms' for #<User:0x000000014ca0fa30>):
+  
+app/serializers/user_serializer.rb:5:in `block in <class:UserSerializer>'
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for 127.0.0.1 at 2022-07-24 19:36:01 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 261ms (Views: 0.2ms | ActiveRecord: 12.1ms | Allocations: 4394)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 19:36:03 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-24 19:37:59 -0400
+Processing by RoomsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 564)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-24 19:37:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-07-24 19:38:04 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 7.2ms | Allocations: 5324)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-24 19:38:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 19:38:11 -0400
+Processing by RoomsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-24 19:38:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 19:38:11 -0400
+Processing by RoomsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2022-07-24 19:38:23 -0400
+Processing by RoomsController#index as */*
+  Parameters: {"body"=>"My interests are in Front End Engineering and Books", "room"=>{}}
+  [1m[36mRoom Load (5.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:6:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 13]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 14]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 15]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 16]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 17]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 18]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 19]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 38ms (Views: 0.1ms | ActiveRecord: 16.2ms | Allocations: 25669)
+
+
+Started GET "/messages" for 127.0.0.1 at 2022-07-24 19:38:31 -0400
+Processing by MessagesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-24 19:38:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/messages" for 127.0.0.1 at 2022-07-24 19:38:38 -0400
+Processing by MessagesController#index as */*
+  Parameters: {"body"=>"My interests are in Front End Engineering and Books", "message"=>{"body"=>"My interests are in Front End Engineering and Books"}}
+  [1m[36mMessage Load (6.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.62ms)
+Completed 200 OK in 46ms (Views: 35.8ms | ActiveRecord: 10.6ms | Allocations: 34479)
+
+
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 19:38:47 -0400
+Processing by UserRoomsController#index as HTML
+  [1m[36mUserRoom Load (0.4ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms"[0m
+  ↳ app/controllers/user_rooms_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 21ms (Views: 9.2ms | ActiveRecord: 11.1ms | Allocations: 3930)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-24 19:38:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/user_rooms" for 127.0.0.1 at 2022-07-24 19:38:56 -0400
+Processing by UserRoomsController#index as */*
+  Parameters: {"body"=>"My interests are in Front End Engineering and Books", "user_room"=>{}}
+  [1m[36mUserRoom Load (0.5ms)[0m  [1m[34mSELECT "user_rooms".* FROM "user_rooms"[0m
+  ↳ app/controllers/user_rooms_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.44ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 1715)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-24 19:39:20 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 749)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-24 19:39:22 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
