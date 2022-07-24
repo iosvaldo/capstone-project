@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :user_rooms, only: [:index,:show, :create]
   resources :rooms, only: [:index, :show, :create]
-  resources :messages, only: [:index, :create]
+  resources :messages, only: [:index,:show, :create,:update,:destroy]
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

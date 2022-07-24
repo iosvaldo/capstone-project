@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
   end
 
   def render_validation_errors(e)
-    render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
+    render json: {errors: [e.record.errors.full_messages]}, status: :unprocessable_entity
   end
 
   def record_not_found(e)
@@ -19,10 +19,9 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate_user
-    if user
-    return 
-    render json: { errors: "You must be logged in to do that." }, status: :unauthorized
-    end
+     
+    render json: { errors: "You must be logged in to do that." }, status: :unauthorized unless session.include? :user_id
+ 
   end
 
 end

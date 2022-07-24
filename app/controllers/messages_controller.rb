@@ -8,33 +8,34 @@ before_action :authenticate_user
 
   def create
     message = Message.new(message_params)
-    room = Room.find(params[:room_id])
+    # room = Room.find(params[:room_id])
     if message.save
-        room = message.room
-        broadcast room 
+    room = message.room
+    RoomChannel.broadcast_to(room, {
+        room: room,
+        users: room.users,
+        message: room.messages 
+    })
     end
-        render json: message
+      render json: message
   end
 
 
   def update
     message = Message.find(params[:id])
-    message.update!(message_params)
-    room = message.room
-    broadcast room 
+    message.update(message_params)
+    # room = message.room
+    # broadcast room 
     render json: message
   end
 
-  # def show
-  #   render json: Message.find(params[:id])
-  # end
+  def show
+    render json: Message.find(params[:id])
+  end
 
   def destroy
-    message = Message.find_by (id: params[:id])
-    if message.delete
-      room = message.room
-      broadcast room
-    end
+    message = Message.find_by(id: params[:id])
+    message.delete
     head :no_content
   end
 
@@ -44,12 +45,12 @@ before_action :authenticate_user
     params.require(:message).permit(:body, :user_id, :room_id)
   end
 
-  def broadcast (room)
-    RoomChannel.broadcast_to (room, {
-    room: room,
-    users: room.users, 
-    messages: room.messages,
-     })
-  end
+  # def broadcast(room)
+  #   RoomChannel.broadcast_to(room, {
+  #   room: room,
+  #   users: room.users, 
+  #   messages: room.messages,
+  #    })
+  # end
 
 end
