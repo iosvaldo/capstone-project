@@ -3,30 +3,27 @@ class UsersController < ApplicationController
 
   def index
     users = User.all
-    # render json: UserSerializer.new(users)
-    render json: users
+    render json: UserSerializer.new(users).serialized_json
+    # render json: users
   end
 
   def create
     user = User.create!(user_params)
-    render json: user
-    if user
-      room = Room.creaye(name: user.username, description: "This is the beginning of your new room")
-      user_rooms = UserRooms.create(user_id: user.id, room_id: room.id)
-      message = Message.create(body: "THis is the beginning of your new message", room_id: room.id, user_id: user.id)
-      # payload = {'user_id': user.id}
-      # token = encode(payload)
-      # render json: {
-      #   user: UserSerializer.new(user),
-      #   token: token,
-      #   authenticated: true
-      # }
-    else
-      render json: {message: "the system ran into an error when creating your account"}
-  end
+    session[:user_id] = user.id
+    render json: UserSerializer.new(user).serialized_json, status: :created
+  #   if user
+  #     room = Room.create(name: user.username, description: "This is the beginning of your new room")
+  #     user_rooms = UserRooms.create(user_id: user.id, room_id: room.id)
+  #     message = Message.create(body: "THis is the beginning of your new message", room_id: room.id, user_id: user.id)
+     
+  #   else
+  #     render json: {message: "the system ran into an error when creating your account"}
+  # end
+end
 
   def show
-    render json: User.find(params[:id])
+    user = User.find_by(id: session[:user_id])
+    render json: UserSerializer.new(user).serialized_json, status: :ok
   end
 
   def update

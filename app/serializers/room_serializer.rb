@@ -3,4 +3,5 @@ class RoomSerializer < ActiveModel::Serializer
   attributes :id, :name, :description,:users
    attribute :users do |room|
    UserSerializer.new(room.users.uniq).serializable_hash
+   end
 end
