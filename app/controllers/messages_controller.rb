@@ -32,7 +32,7 @@ before_action :authenticate_user
   def destroy
     message = Message.find_by (id: params[:id])
     if message.delete
-      room = message. room
+      room = message.room
       broadcast room
     end
     head :no_content
