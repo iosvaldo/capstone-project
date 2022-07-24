@@ -8628,3 +8628,177 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 1ms (ActiveRecord: 0.2ms | Allocations: 663)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-23 20:28:50 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/login" for 127.0.0.1 at 2022-07-23 20:28:54 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 417ms (Views: 6.4ms | ActiveRecord: 4.1ms | Allocations: 8827)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 20:28:56 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 677)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-23 20:56:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/login" for 127.0.0.1 at 2022-07-23 20:56:14 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 201 Created in 437ms (Views: 6.1ms | ActiveRecord: 5.7ms | Allocations: 8816)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 20:56:18 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 697)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-23 20:59:01 -0400
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 9]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 10]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 11]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 12]]
+[active_model_serializers]   ↳ app/controllers/rooms_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.84ms)
+Completed 200 OK in 47ms (Views: 27.8ms | ActiveRecord: 13.7ms | Allocations: 28059)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-07-23 20:59:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/login" for 127.0.0.1 at 2022-07-23 20:59:28 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 201 Created in 404ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 1814)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 20:59:30 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms | Allocations: 665)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-23 21:05:00 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 201 Created in 433ms (Views: 1.9ms | ActiveRecord: 3.2ms | Allocations: 4855)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 21:05:03 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 677)
+
+
