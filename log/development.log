@@ -8898,3 +8898,81 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 654)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started GET "/me" for 127.0.0.1 at 2022-07-23 22:11:50 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/osvaldo/Desktop/chat-app/capstone-project/app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:50: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/login" for 127.0.0.1 at 2022-07-23 22:11:54 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 201 Created in 271ms (Views: 4.5ms | ActiveRecord: 3.9ms | Allocations: 8822)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 22:11:55 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 678)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-23 22:12:07 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Beddy", "password"=>"[FILTERED]", "session"=>{"username"=>"Beddy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Beddy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 265ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1705)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-23 22:12:11 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Beddy", "password"=>"[FILTERED]", "session"=>{"username"=>"Beddy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Beddy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 201 Created in 264ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1362)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-23 22:12:12 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 659)
+
+
