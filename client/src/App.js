@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Room from './Room';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -41,7 +42,10 @@ if (!authChecked) { return <div className="todo-app">
         )
       } 
       
-    
+    <Route exact path="/rooms/:id" element={
+    <Room currentUser={currentUser} />}>
+
+    </Route>
     </Router>
     
   )
