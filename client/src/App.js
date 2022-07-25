@@ -3,6 +3,7 @@ import './App.css';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
 import { BrowserRouter as Router } from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   
