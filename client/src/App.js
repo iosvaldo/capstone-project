@@ -3,7 +3,9 @@ import './App.css';
 import Room from './Room';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {Routes , Route} from 'react-router-dom'
+import Signup from './Signup';
+import Login from './Login';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -31,22 +33,20 @@ if (!authChecked) { return <div className="todo-app">
   </div> }
   
     return (    
-    <Router>
-    
-        {currentUser ? (
+    <Routes>
+    <Route path="/" element={
+        currentUser ? (
           <AuthenticatedApp
             setCurrentUser={setCurrentUser}
             currentUser={currentUser}/>) : (
           <UnauthenticatedApp
             setCurrentUser={setCurrentUser} />
         )
-      } 
-      
-    <Route exact path="/rooms/:id" element={
-    <Room currentUser={currentUser} />}>
-
-    </Route>
-    </Router>
+       }/>
+    <Route path='/signup'element={<Signup/>}/>
+    <Route path='/login'element={<Login/>}/>
+    <Route path="/rooms/:id" element={<Room currentUser={currentUser} />}/>
+    </Routes>
     
   )
 }

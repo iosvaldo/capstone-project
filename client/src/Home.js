@@ -18,7 +18,6 @@ function Home({currentUser}) {
        <p style={{
         fontFamily: "Ariel",
          fontSize: "50px",
-         color: "#977FD7",
           }}>
           What Chat room are you interested in?
           </p>

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 end
 
   def show
-    user = User.find_by(params[:user_id])
+    user = User.find(session[:user_id])
     render json: UserSerializer.new(user).serialized_json, status: :ok
   end
 

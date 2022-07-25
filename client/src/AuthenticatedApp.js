@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect} from 'react-router-dom'
+import { useNavigate, Route, Routes} from 'react-router-dom'
 import Navigation from './Navigation'
 import Home from './Home'
 // import Todo from './Todo'
@@ -22,20 +22,19 @@ function AuthenticatedApp({currentUser, setCurrentUser}) {
 
   return (
     <div>
-      <Navigation
+      
+     <Navigation
         setCurrentUser={setCurrentUser}
         currentUser={currentUser}
         handleLogout={handleLogout}
         />
-        <Switch>
-          <Route exact path="/">
+        
             <Home currentUser={currentUser}/>
-          </Route>
           {/* <Route path="/todo">
             <Todo />
           </Route>  */}
-          <Redirect to= "/" />
-        </Switch>
+          {/* <Redirect to= "/" />
+        </Routes> */}
     </div>
   );
 }

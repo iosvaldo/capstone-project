@@ -14352,3 +14352,578 @@ Processing by SessionsController#create as */*
 Completed 201 Created in 285ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 865)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /Users/osvaldo/Desktop/chat-app/capstone-project/config/environment.rb:5)
+Started POST "/login" for 127.0.0.1 at 2022-07-25 14:29:22 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 417ms (Views: 0.4ms | ActiveRecord: 6.3ms | Allocations: 7378)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:30:12 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 761)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:30:22 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 743)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:31:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:31:54 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 720)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:32:11 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 742)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:32:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:00 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:02 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:11 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 743)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:32 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:49 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:52 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:33:53 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:34:08 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 721)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:36:10 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 37ms (Views: 1.1ms | ActiveRecord: 31.1ms | Allocations: 1065)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:36:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:36:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:37:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:37:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:37:34 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:38:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:38:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:38:18 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:38:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:38:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:38:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:38:29 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:38:31 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:38:34 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:39:06 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 265)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:39:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started POST "/login" for 127.0.0.1 at 2022-07-25 14:39:55 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 418ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 3642)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:41:20 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 869)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:41:24 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Started GET "/rooms/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:41:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:41:48 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:41:50 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 764)
+
+
+Started GET "/rooms/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:42:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:42:10 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 765)
+
+
+Started GET "/rooms/undefined" for 127.0.0.1 at 2022-07-25 14:42:10 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 12ms (Views: 0.5ms | ActiveRecord: 4.0ms | Allocations: 3195)
+
+
+Started GET "/rooms/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:43:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:49:00 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 7.9ms | Allocations: 3957)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2022-07-25 14:49:00 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 10096)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:49:07 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 776)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:49:10 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-25 14:49:12 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-25 14:49:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 287ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 803)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2022-07-25 14:49:26 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 1712)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2022-07-25 14:49:31 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 1707)
+
+
+Started GET "/rooms/3" for 127.0.0.1 at 2022-07-25 14:49:34 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 1807)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:50:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:50:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:50:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:50:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-25 14:51:01 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 176)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-25 14:51:05 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 285ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 812)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2022-07-25 14:51:07 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1723)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2022-07-25 14:51:17 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 2]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1702)
+
+
+Started GET "/rooms/3" for 127.0.0.1 at 2022-07-25 14:51:21 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1821)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-25 14:51:27 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 176)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:54:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:55:57 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:55:58 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 14:56:11 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 404 Not Found in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:59:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 14:59:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 15:01:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-25 15:01:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:01:02 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 0ms (Views: 0.2ms | Allocations: 347)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:03:33 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 404 Not Found in 0ms (Views: 0.2ms | Allocations: 349)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:03:34 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 1ms (Views: 0.5ms | Allocations: 347)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:03:37 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 404 Not Found in 1ms (Views: 0.8ms | Allocations: 345)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-25 15:03:42 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 270ms (Views: 0.2ms | ActiveRecord: 8.4ms | Allocations: 3986)
+
+
+Started GET "/rooms/1" for 127.0.0.1 at 2022-07-25 15:03:45 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 1767)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-25 15:04:24 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-25 15:04:30 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 201 Created in 289ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 805)
+
+
+Started GET "/rooms/3" for 127.0.0.1 at 2022-07-25 15:04:39 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_rooms" ON "users"."id" = "user_rooms"."user_id" WHERE "user_rooms"."room_id" = $1[0m  [["room_id", 3]]
+  ↳ app/serializers/room_serializer.rb:5:in `uniq'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1818)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-25 15:04:49 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:07:40 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.02ms)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:07:47 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-25 15:08:00 -0400
+Processing by UsersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 343)
+
+

@@ -5,9 +5,9 @@ import { NavLink, Link } from "react-router-dom"
 
 function Room({ currentUser }) {
 	// const { id } = useParams()
-	const [room, setRoom] = useState(null)
+	const [room, setRoom] = useState({});
 	useEffect(() => {
-		fetch(`/rooms/${room.id}`)
+		fetch(`/rooms/${window.location.href.match(/\d+$/)[0]}`)
 			.then((r) => r.json())
 			.then((res) => setRoom(res))
 	}, [])
@@ -27,7 +27,7 @@ function Room({ currentUser }) {
 				{currentUser ? (
 					"Enter the chatroom"
 				) : (
-					<Link className="app-items" to="/signin">
+					<Link className="app-items" to="/chatroom">
 						Please Sign in to enter Chatroom
 					</Link>
 				)}
