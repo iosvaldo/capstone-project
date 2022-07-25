@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import actionCable from 'actioncable';
+
+const cableApp={}
+
+cableApp.cable = actionCable.createConsumer("ws://localhost:3000/cable")
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App cableApp={cableApp} />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -8,11 +8,11 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   # broadcast_to comes off the channel class. You use this after you've created a channel. Let's say you want to notify all the subscribers of blog post comments
-   def received(data)
-    RoomChanne.broadcast_to(room, { 
-      room: room, 
-      users: room.users, 
-      messages: room.messages 
+   def received (data) 
+    RoomChannel.broadcast_to(@room, { 
+      room: @room, 
+      users: @room.users, 
+      messages: @room.messages 
       })
   end
 
