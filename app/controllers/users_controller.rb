@@ -3,18 +3,18 @@ class UsersController < ApplicationController
 
   def index
     users = User.all
-    render json: UserSerializer.new(users).serialized_json
+    render json: users
   end
 
   def show
     user = User.find_by(id: session[:user_id])
-    render json: UserSerializer.new(user).serialized_json, status: :ok
+    render json: user, status: :ok
   end
 
   def create
     user = User.create!(user_params)
     session[:user_id] = user.id
-    render json: UserSerializer.new(user).serialized_json, status: :created
+    render json: user, status: :created
   end
 
   private

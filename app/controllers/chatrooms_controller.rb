@@ -11,7 +11,7 @@ class ChatroomsController < ApplicationController
 
   def show
     chatroom = Chatroom.find(params[:id])
-    render json: ChatroomSerializer.new(chatroom).serialized_json
+    render json: chatroom
   end
 
   private

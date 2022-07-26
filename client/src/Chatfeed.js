@@ -25,7 +25,7 @@ function Chatfeed({
 	}
 	const timestamp = new Date(message.created_at).toLocaleTimeString()
 	const whichUser = () => {
-		if (message.user_id === parseInt(currentUser.data.id)) {
+		if (message.user_id === parseInt(currentUser.id)) {
 			return "current-user-message"
 		} else {
 			return "other-user-message"

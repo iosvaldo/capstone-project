@@ -9,29 +9,37 @@ import Search from "./Search"
 function RoomShow({
 	cableApp,
 	updateApp,
-	getRoomData,
-	messages,
 	handleMessageUpdate,
-	roomData,
 	currentUser,
-	users,
 }) {
 	const [newMessage, setNewMessage] = useState("")
-	const [getData, setGetData] = useState("")
+	const [getData, setGetData] = useState({})
+	const [roomData, getRoomData] = useState({})
+	const [users, setUsers] = useState([])
+	const [messages, setmessages] = useState([])
 	const [search, setSearch] = useState("")
 	const chatroomId = window.location.href.match(/\d+$/)[0]
-
+	console.log(messages)
 	useEffect(() => {
 		fetch(`/chatrooms/${chatroomId}`)
 			.then((resp) => resp.json())
 			.then((res) => {
-				setGetData(res.data.attributes.users.data)
-				handleMessageUpdate(res.data.attributes.messages)
+				console.log(res)
+				setGetData(res)
+				// handleMessageUpdate(res.messages)
+				getRoomData(res)
+				setUsers(res.users)
+				setmessages(res.messages)
 			})
 	}, [])
-
+	function actionUpdate(res){
+				setGetData(res)
+				getRoomData(res)
+				setUsers(res.users)
+				setmessages(res.messages)
+	}
 	function displayUsers(data) {
-		return data.map((x) => x.attributes).filter((user) =>
+		return data.map((x) => x).filter((user) =>
 				user.username.toLowerCase().includes(search.toLowerCase())
 			).map((user) => {
 				return (
@@ -64,7 +72,7 @@ function RoomShow({
 	}
 	const message = {
 		message_body: newMessage,
-		user_id: currentUser.data.attributes.id,
+		user_id: currentUser.id,
 		chatroom_id: chatroomId,
 	}
 	function submitMessage(e) {
@@ -133,11 +141,10 @@ function RoomShow({
 	return (
 		<div className="chat-container">
 			<div className="users">
-				<p style={{ float: "left" }}>#{roomData.chatroom.room_name}</p>
+				{/* <p style={{ float: "left" }}>#{roomData.chatroom.room_name}</p> */}
 				<h4 style={{ float: "left" }}>Chatroom Members</h4>
-				{/* removed break tags */}
 				<Search search={search} setSearch={setSearch}></Search>
-				{getData !== null ? displayUsers(getData) : null}
+				{getData !== null ? displayUsers(users) : null}
 			</div>
 			<div id="messages" className="message-feed">
 				<div>
@@ -149,7 +156,7 @@ function RoomShow({
 						</h3>
 					)}
 				</div>
-				{/* removed break tags */}
+			
 				<MessagesArea
 					submitMessage={submitMessage}
 					newMessage={newMessage}
@@ -161,6 +168,7 @@ function RoomShow({
 				updateApp={updateApp}
 				getRoomData={getRoomData}
 				roomData={roomData}
+				actionUpdate={actionUpdate}
 			/>
 		</div>
 	)

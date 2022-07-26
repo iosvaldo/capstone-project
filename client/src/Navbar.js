@@ -25,7 +25,7 @@ function Navbar({ user, setUser }) {
 				</li>
 				{user != null ? (
 					<>
-						<li className="nav-items">{`Hi , ${user.data.attribute.name.toUpperCase()}`}</li>
+						<li className="nav-items">{`Hi , ${user.name.toUpperCase()}`}</li>
 						<li>
 							<button className="nav-button" onClick={handleSignout}>
 								Sign out

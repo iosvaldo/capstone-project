@@ -7,8 +7,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.new(messages_params)
-    if message.save
+    message = Message.create(messages_params)
+    if message
       chatroom = message.chatroom
       broadcast chatroom
     end
@@ -18,8 +18,12 @@ class MessagesController < ApplicationController
   def update
     message = Message.find(params[:id])
     message.update(messages_params)
-    chatroom = message.chatroom
-    broadcast chatroom
+    chatroom = ChatRoom.find(messages_params[:chatroom_id])
+    ChatroomsChannel.broadcast_to(chatroom, {
+      chatroom: chatroom,
+      users: chatroom.users,
+      messages: chatroom.messages,
+    })
     render json: message
   end
 
