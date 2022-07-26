@@ -1,44 +1,45 @@
 .nav-container {
-  height: 50px;
-  /* background-color: #a3bded; */
-  background-color: #4158d0;
-  background-image: linear-gradient(43deg,
-      #4158d0 0%,
-      #c850c0 46%,
-      #ffcc70 100%);
+	height: 50px;
+	/* background-color: #a3bded; */
+	background-color: #4158d0;
+	background-image: linear-gradient(
+		43deg,
+		#4158d0 0%,
+		#c850c0 46%,
+		#ffcc70 100%
+	);
 
-  width: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  z-index: 1;
-  transition: top 0.3s;
-  /* margin: auto; */
+	width: 100%;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	z-index: 1;
+	transition: top 0.3s;
+	/* margin: auto; */
 }
 
 .nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  margin: auto;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	margin: auto;
 }
-
 .nav-items {
-  text-decoration: none;
-  font-family: "Bree Serif", cursive;
-  font-size: 20px;
+	text-decoration: none;
+	font-family: "Bree Serif", cursive;
+	font-size: 20px;
 }
 
 .nav-button {
-  text-decoration: none;
-  font-family: "Bree Serif", cursive;
-  font-size: 20px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
+	text-decoration: none;
+	font-family: "Bree Serif", cursive;
+	font-size: 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
 }

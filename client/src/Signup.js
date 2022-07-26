@@ -1,95 +1,165 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import { MdPassword } from "react-icons/md"
+import { BsPersonFill, BsPersonLinesFill } from "react-icons/bs"
+import PageSwitcher from "./PageSwitcher"
+import { useNavigate } from "react-router-dom"
+import { Container, Alert } from "react-bootstrap"
 
-function Signup({setCurrentUser}) {
+function Signup({ onSignup }) {
+	const navigate = useNavigate()
+	const [errors, setErrors] = useState([])
 
-//  const history = useHistory()
- const [username, setUsername] = useState('')
- const [password, setPassword] = useState('')
- const [passwordConfirmation, setPasswordConfirmation] = useState('')
- const [ displayError, setDisplayError] = useState('')
+	const signupObj = {
+		name: "",
+		username: "",
+		password: "",
+		passwordConfirmation: "",
+		hasAgreed: false,
+	}
+	const [signupForm, setSignupForm] = useState(signupObj)
 
- const handleSubmit = (e) => {
-  e.preventDefault()
-  fetch('/signup', {
-    method: 'POST',
-    headers:{
-      'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({
-      username,
-      password,
-      password_confirmation: passwordConfirmation
-    })
-  }) 
-    .then(res => {
-      if (res.ok) {
-      res.json().then(user => {
-        setCurrentUser(user)
-        // history.push('/signup')
-      })
-      } else {
-        res.json().then(e => {
-          setDisplayError(e.errors.join(', '))
-          // setDisplayError(Object.entries(e.errors).flat())
-        })
-      }
-    })
- }
-  return (
-    <div>
-      <h1>Developer Chat App</h1>
-      <form className="box" onSubmit={handleSubmit}>
-        <h1 className="text-center">Sign Up</h1>
-          <div className="input-container">
-            <input 
-            required
-            type="text" 
-            name="username"
-            value={username}
-            onChange={(e) => {
-              setDisplayError("")
-              setUsername(e.target.value)}
-            }/>
-            <label htmlFor="username">User Name</label>		
-          </div>
+	function handleChange(event) {
+		let target = event.target
+		let value = target.type === "checkbox" ? target.checked : target.value
+		let name = target.name
 
-          <div className="input-container">		
-            <input 
-            required
-            type="password" 
-            name=""
-            value={password}
-            onChange={(e)=> {
-              setDisplayError("")
-              setPassword(e.target.value)}
-            }/>
-            <label>Password</label>
-          </div>
+		setSignupForm({ ...signupForm, [name]: value })
+	}
 
-           <div className="input-container">		
-            <input 
-            required
-            type="password" 
-            name="password_confirmation"
-            value={passwordConfirmation}
-            onChange={(e)=> {
-              setDisplayError("")
-              setPasswordConfirmation(e.target.value)}
-            }/>
-            <label>Password Confirmation</label>
-          </div>
-          <p>{displayError}</p>
-          <div className="btn-container">
-            <button className="btn-29" type="submit">Sign Up</button>
-            <p>-- or --</p>
-            <Link type="submit" className="btn-29" to="/login">Log In</Link>
-          </div>
-          <p>Please Log In or Sign Up</p>
-      </form>	
+	function handleSubmit(e) {
+		e.preventDefault()
+		fetch("/signup", {
+			method: "post",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify({
+				name: signupForm.name,
+				username: signupForm.username,
+				password: signupForm.password,
+				password_confirmation: signupForm.passwordConfirmation,
+				has_agreed: signupForm.hasAgreed,
+			}),
+		}).then((r) => {
+			if (r.ok) {
+				r.json().then((user) => {
+					onSignup(user)
+					navigate("/signin")
+					setSignupForm(signupObj)
+				})
+			} else {
+				r.json().then((err) => {
+					console.log(err)
+					setErrors(err.errors)
+				})
+			}
+		})
+	}
+	return (
+		<Container
+			style={{
+				overflow: "auto",
+				height: "120vh",
+				width: "70%",
+				marginTop: "5%",
+				borderStyle: "solid",
+				borderColor: "grey",
+			}}
+		>
+			<PageSwitcher />
+			<div className="formCenter">
+				{errors.map((err) => (
+					<Alert variant="danger">{err}</Alert>
+				))}
+				<form onSubmit={(e) => handleSubmit(e)} className="formFields">
+					<div className="formField">
+						<label className="formFieldLabel" htmlFor="name">
+							<BsPersonFill />
+						</label>
+						<input
+							type="text"
+							id="name"
+							className="formFieldInput"
+							placeholder="Enter first name"
+							name="name"
+							value={signupForm.name}
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+					<div className="formField">
+						<label className="formFieldLabel" htmlFor="username">
+							<BsPersonLinesFill />
+						</label>
+						<input
+							type="text"
+							id="username"
+							className="formFieldInput"
+							placeholder="Enter username"
+							name="username"
+							required
+							value={signupForm.username}
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+					<div className="formField">
+						<label className="formFieldLabel" htmlFor="password">
+							<MdPassword />
+						</label>
+						<input
+							type="password"
+							id="password"
+							className="formFieldInput"
+							placeholder="Enter password"
+							required
+							name="password"
+							value={signupForm.password}
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+					<div className="formField">
+						<label className="formFieldLabel" htmlFor="password">
+							<MdPassword />
+						</label>
+						<input
+							type="password"
+							id="passwordConfirmation"
+							className="formFieldInput"
+							placeholder="Confirm password"
+							name="passwordConfirmation"
+							required
+							value={signupForm.passwordConfirmation}
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
 
-    </div>
-  )
+					<div className="formField">
+						<label className="formFieldCheckboxLabel">
+							<input
+								className="formFieldCheckbox"
+								type="checkbox"
+								name="hasAgreed"
+								required
+								checked={signupForm.hasAgreed}
+								onChange={(e) => handleChange(e)}
+							/>{" "}
+							I agree all statements in{" "}
+							<Link exact to="/disclaimer" className="formFieldTermsLink">
+								terms of service
+							</Link>
+						</label>
+					</div>
+
+					<div className="formField">
+						<button className="formFieldButton">Sign Up</button>{" "}
+						<Link exact to="/signin" className="formFieldLink">
+							I'm already member
+						</Link>
+					</div>
+				</form>
+			</div>
+		</Container>
+	)
 }
 
 export default Signup

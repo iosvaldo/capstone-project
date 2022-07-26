@@ -9,8 +9,8 @@ function EditMessage({ message, onUpdateMessage }) {
 		e.preventDefault()
 		const data = {
 			user_id: message.user_id,
-			body: messageBody,
-			room_id: message.room_id,
+			message_body: messageBody,
+			chatroom_id: message.chatroom_id,
 		}
 
 		fetch(`/messages/${message.id}`, {
@@ -26,7 +26,7 @@ function EditMessage({ message, onUpdateMessage }) {
 			})
 	}
 	return (
-		<form className="edit-message" onSubmit={handleFormSubmit}>
+		<form className="edit-message" onSubmit={(e) => handleFormSubmit(e)}>
 			<input
 				type="text"
 				name="body"

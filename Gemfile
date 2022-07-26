@@ -19,16 +19,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem "fast_jsonapi", "~> 1.5"
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem "fast_jsonapi", "~> 1.5"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-
-# JWT for token Authentication
-# gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,5 +49,3 @@ group :test do
 end
 
 gem "active_model_serializers", "~> 0.10.12"
-
-gem 'before_actions'

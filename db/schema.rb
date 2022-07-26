@@ -10,40 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_24_225504) do
+ActiveRecord::Schema.define(version: 2021_12_01_214009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "messages", force: :cascade do |t|
-    t.text "body"
-    t.integer "user_id"
-    t.integer "room_id"
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "room_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_private", default: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.string "message_body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.boolean "is_private"
-  end
-
-  create_table "user_rooms", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.string "room_name"
+    t.string "room_body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
     t.string "password_digest"
-    t.string "active", default: "inactive"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_agreed"
   end
 
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end

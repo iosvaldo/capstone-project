@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-before_action :authenticate_user
+  before_action :authorize
 
   def index
     messages = Message.all
@@ -7,49 +7,42 @@ before_action :authenticate_user
   end
 
   def create
-    message = Message.create!(message_params)
-    # room = Room.find(params[:room_id])
+    message = Message.new(messages_params)
     if message.save
-    room = message.room
-    RoomChannel.broadcast_to(room, {
-        room: room,
-        users: room.users,
-        message: room.messages 
-    })
+      chatroom = message.chatroom
+      broadcast chatroom
     end
-      render json: message
-  end
-
-
-  def update
-    message = Message.find(params[:id])
-    message.update(message_params)
-    # room = message.room
-    # broadcast room 
     render json: message
   end
 
-  def show
-    render json: Message.find(params[:id])
+  def update
+    message = Message.find(params[:id])
+    message.update(messages_params)
+    chatroom = message.chatroom
+    broadcast chatroom
+    render json: message
   end
 
   def destroy
-    Message.find(params[:id]).destroy
+    message = Message.find_by(id: params[:id])
+    if message.delete
+      chatroom = message.chatroom
+      broadcast chatroom
+    end
     head :no_content
   end
 
   private
 
-  def message_params
-    params.require(:message).permit(:body, :user_id, :room_id)
+  def messages_params
+    params.require(:message).permit(:message_body, :user_id, :chatroom_id)
   end
 
-  def broadcast(room)
-    RoomChannel.broadcast_to(room, {
-    room: room,
-    users: room.users, 
-    messages: room.messages,
-     })
+  def broadcast(chatroom)
+    ChatroomsChannel.broadcast_to(chatroom, {
+      chatroom: chatroom,
+      users: chatroom.users,
+      messages: chatroom.messages,
+    })
   end
-
 end

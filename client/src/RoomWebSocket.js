@@ -5,7 +5,7 @@ function RoomWebSocket(props) {
 		props.getRoomData(window.location.href.match(/\d+$/)[0])
 		props.cableApp.room = props.cableApp.cable.subscriptions.create(
 			{
-				channel: "RoomChannel",
+				channel: "ChatroomsChannel",
 				room: window.location.href.match(/\d+$/)[0],
 			},
 			{

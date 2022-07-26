@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react"
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router"
 import { Container } from "react-bootstrap"
 import { NavLink, Link } from "react-router-dom"
 
 function Room({ currentUser }) {
-	// const { id } = useParams()
-	const [room, setRoom] = useState({});
+	const { id } = useParams()
+	const [room, setRoom] = useState(null)
 	useEffect(() => {
-		fetch(`/rooms/${window.location.href.match(/\d+$/)[0]}`)
+		fetch(`/rooms/${id}`)
 			.then((r) => r.json())
 			.then((res) => setRoom(res))
-	}, [])
+	}, [id])
 
 	return (
 		<Container
@@ -22,20 +22,17 @@ function Room({ currentUser }) {
 					{room.room_body}
 				</p>
 			)}
-      <nav>
-			<NavLink exact to={`/rooms/${room.id}`} className="app-items">
+			<NavLink exact to={`/chatrooms/${id}`} className="app-items">
 				{currentUser ? (
 					"Enter the chatroom"
 				) : (
-					<Link className="app-items" to="/chatroom">
+					<Link className="app-items" to="/signin">
 						Please Sign in to enter Chatroom
 					</Link>
 				)}
 			</NavLink>
-      </nav>
 		</Container>
 	)
 }
 
 export default Room
-

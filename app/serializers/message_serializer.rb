@@ -1,3 +1,5 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :user_id,:room_id,:body, :user, :created_at, :updated_at
+  # include FastJsonapi::ObjectSerializer
+  attributes :message_body,:user_id,:chatroom_id
+
 end

@@ -1,5 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :user
-  belongs_to :room
-  validates :body, presence: true
+  belongs_to :chatroom
+
+  validates :message_body, presence: :true
 end

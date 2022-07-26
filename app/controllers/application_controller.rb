@@ -1,29 +1,20 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  rescue_from ActiveRecord::RecordInvalid, with: :render_validation_errors
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-  before_action :authenticate_user
+  rescue_from ActiveRecord::RecordNotFound, with: :render_response_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_response
+  before_action :authorize
 
+  private
 
-
-  def user
-    @user ||= User.find_by(session[:user_id])
+  def render_response_not_found
+    render json: { errors: "Not Found" }, status: :not_found
   end
 
-  def render_validation_errors(e)
-    render json: {errors: [e.record.errors.full_messages]}, status: :unprocessable_entity
+  def render_invalid_response(exception)
+    render json: { errors: [exception.record.errors.full_messages] }, status: :unprocessable_entity
   end
 
-  def record_not_found(e)
-    render json: {error: e.message}, status: :not_found
+  def authorize
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :user_id
   end
-
-  def authenticate_user
-     
-    render json: { errors: "You must be logged in to do that." }, status: :unauthorized unless session.include? :user_id
- 
-  end
-
 end
-
-
