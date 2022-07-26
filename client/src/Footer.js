@@ -6,7 +6,7 @@ function Footer() {
 		<div className="footer-container">
 			<a
 				style={{ textDecoration: "none", fontSize: "20px", color: "white" }}
-				href="mailto:salonimehta2127@gmail.com"
+				href="mailto:iosvaldo.app@gmail.com"
 			>
 				Contact Us
 			</a>
