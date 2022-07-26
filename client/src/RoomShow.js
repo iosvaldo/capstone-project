@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
-// import Chatfeed from "./Chatfeed"
-// import MessagesArea from "./MessagesArea"
+import MessagesArea from "./MessageArea"
+import Chatfeed from "./Chatfeed"
 import RoomWebSocket from "./RoomWebSocket"
-// import Search from "./Search"
+import Search from "./Search"
 
-// import "./css/Chat.css"
+import "./css/Chat.css"
 
 function RoomShow({
 	cableApp,
@@ -43,7 +43,7 @@ function RoomShow({
 					>
 						<img
 							style={{ height: "auto", width: "30px", float: "left" }}
-							src="https://yorktonrentals.com/wp-content/uploads/2017/06/usericon.png"
+							src=""
 							alt="avatar"
 						/>
 						<h6
@@ -71,7 +71,7 @@ function RoomShow({
 	}
 	function submitMessage(e) {
 		// debugger;
-		e.preventDefault()
+		e.preventDefault();
 		setNewMessage("")
 		fetch("/messages", {
 			method: "POST",
@@ -92,80 +92,79 @@ function RoomShow({
 		return user
 	}
 
-	function displayMessages(messages) {
-		return messages.map((msg) => {
-			const user = whichUser(msg)
-			// console.log(user)
-			return msg.body !== null ? (
-				<div
-					key={msg.id}
-					room={roomData}
-					user={user}
-					onDeleteMessage={handleDeleteClick}
-					onUpdateMessage={handleUpdateMessage}
-					currentUser={currentUser}
-					allUsers={users}
-					message={msg}
-				/>
-			) : (
-				<div></div>
-			)
-		})
-	}
-	function handleUpdateMessage(updatedMessageObj) {
-		const updatedMessages = messages.map((message) => {
-			if (message.id === updatedMessageObj.id) {
-				return updatedMessageObj
-			} else {
-				return message
-			}
-		})
-		handleMessageUpdate(updatedMessages)
-	}
+  function displayMessages(messages) {
+    return messages.map((msg) => {
+    const user = whichUser(msg)
+    // console.log(user)
+      return msg.body !== null ? (
+        <Chatfeed
+          key={msg.id}
+          room={roomData}
+          user={user}
+          onDeleteMessage={handleDeleteClick}
+          onUpdateMessage={handleUpdateMessage}
+          currentUser={currentUser}
+          allUsers={users}
+          message={msg}
+        />
+      ) : (
+      <div></div>
+      )
+    })
+  }
+  function handleUpdateMessage(updatedMessageObj) {
+    const updatedMessages = messages.map((message) => {
+      if (message.id === updatedMessageObj.id) {
+        return updatedMessageObj
+      } else {
+        return message
+      }
+    })
+    handleMessageUpdate(updatedMessages)
+  }
 
-	function handleDeleteClick(id) {
-		fetch(`/messages/${id}`, {
-			method: "DELETE",
-		})
+  function handleDeleteClick(id) {
+   fetch(`/messages/${id}`, {
+   method: "DELETE",
+   })  
+   const updatedMessages = messages.filter((message) => message.id !== id)
+   handleMessageUpdate(updatedMessages)
+  }
 
-		const updatedMessages = messages.filter((message) => message.id !== id)
-		handleMessageUpdate(updatedMessages)
-	}
-
-	return (
-		<div className="chat-container">
-			<div className="users">
-				<p style={{ float: "left" }}>#{roomData.room.room_name}</p>
-				<h4 style={{ float: "left" }}>Chatroom Members</h4>
-				{/* removed break tags */}
-				{/* <Search search={search} setSearch={setSearch}></Search> */}
-				{getData !== null ? displayUsers(getData) : null}
-			</div>
-			<div id="messages" className="message-feed">
-				<div>
-					{messages !== null && messages.length > 0 ? (
-						displayMessages(messages)
-					) : (
-						<h3 style={{ color: "blue", marginTop: "50px" }}>
-							This room has no message yet
-						</h3>
-					)}
-				</div>
-				{/* removed break tags */}
-				<div
-					submitMessage={submitMessage}
-					newMessage={newMessage}
-					onMessageInput={handleMessageInput}
-				/>
-			</div>
-			<RoomWebSocket
-				cableApp={cableApp}
-				updateApp={updateApp}
-				getRoomData={getRoomData}
-				roomData={roomData}
-			/>
-		</div>
-	)
+  return (
+   <div className="chat-container">
+     <div className="users">
+        <p style={{ float: "left" }}>#{roomData.room.room_name}</p>
+        <h4 style={{ float: "left" }}>Chatroom Members</h4>
+        {/* removed break tags */}
+        <Search search={search} setSearch={setSearch}></Search>
+        {getData !== null ? displayUsers(getData) : null}
+     </div>
+    <div id="messages" className="message-feed">
+      <div>
+         {messages !== null && messages.length > 0 ? (
+           displayMessages(messages)
+         ) : (
+          <h3 style={{ color: "blue", marginTop: "50px" }}>
+              This room has no message yet
+          </h3>
+          )}
+        </div>
+          {/* removed break tags */}
+        <MessagesArea
+          submitMessage={submitMessage}
+          newMessage={newMessage}
+          onMessageInput={handleMessageInput}
+        />
+    </div>
+      <RoomWebSocket
+         cableApp={cableApp}
+         updateApp={updateApp}
+         getRoomData={getRoomData}
+         roomData={roomData}
+    />
+  </div>
+ )
 }
 
 export default RoomShow

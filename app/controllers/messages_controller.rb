@@ -7,7 +7,7 @@ before_action :authenticate_user
   end
 
   def create
-    message = Message.new(message_params)
+    message = Message.create!(message_params)
     # room = Room.find(params[:room_id])
     if message.save
     room = message.room
@@ -34,8 +34,7 @@ before_action :authenticate_user
   end
 
   def destroy
-    message = Message.find_by(id: params[:id])
-    message.delete
+    Message.find(params[:id]).destroy
     head :no_content
   end
 
@@ -45,12 +44,12 @@ before_action :authenticate_user
     params.require(:message).permit(:body, :user_id, :room_id)
   end
 
-  # def broadcast(room)
-  #   RoomChannel.broadcast_to(room, {
-  #   room: room,
-  #   users: room.users, 
-  #   messages: room.messages,
-  #    })
-  # end
+  def broadcast(room)
+    RoomChannel.broadcast_to(room, {
+    room: room,
+    users: room.users, 
+    messages: room.messages,
+     })
+  end
 
 end

@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 // Logout funtion will remove a user information from state
 function Navigation({setCurrentUser, currentUser,handleLogout}) {
 

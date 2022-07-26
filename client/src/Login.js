@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 
 
 // |||||||| login component for any new user to the application ||||||||
 
 function Login({setCurrentUser}) {
   // const history = useHistory();
-
+  const navigate = useNavigate();
   // const [username, setUsername] = useState('');
   // const [password, setPassword] = useState('');
   const [ displayError, setDisplayError] = useState('')
@@ -41,7 +41,7 @@ function Login({setCurrentUser}) {
         res.json().then(user => {
           // console.log(user)
           setCurrentUser(user)
-          // history.push('/')
+          navigate('/home');
         })
       } else {
         res.json().then(e => {

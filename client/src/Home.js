@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import { FaReact } from "react-icons/fa";
 import { SiRubyonrails } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
+import MessagesArea from './MessageArea';
+import "./App.css";
 
 
 
@@ -25,7 +27,7 @@ function Home({currentUser}) {
         <ul className="app-list">
         <li>
          {" "}
-          <NavLink exact to="/rooms/1" className="app-items">
+          <NavLink exact to="/rooms/1" className="app-items" messages={MessagesArea}>
           <FaReact /> Front end
           </NavLink>{" "}
          </li>
