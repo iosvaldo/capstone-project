@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { AiFillDelete } from "react-icons/ai"
+import { MdDeleteForever } from "react-icons/md"
 import { GiHelp } from "react-icons/gi"
-import { AiFillEdit } from "react-icons/ai"
+import { FaRegEdit } from "react-icons/fa"
 import EditMessage from "./EditMessage"
 function Chatfeed({
 	currentUser,
@@ -52,14 +52,14 @@ function Chatfeed({
 			)}
 			{showHelp && whichUser() === "current-user-message" ? (
 				<>
-					<AiFillDelete
+					<MdDeleteForever
 						onClick={() => onDeleteMessage(message.id)}
 						style={{ float: "left" }}
-					></AiFillDelete>
-					<AiFillEdit
+					></MdDeleteForever>
+					<FaRegEdit
 						onClick={() => setShowEdit(!showEdit)}
 						style={{ float: "left" }}
-					></AiFillEdit>
+					></FaRegEdit>
 					{showEdit && (
 						<EditMessage
 							message={message}

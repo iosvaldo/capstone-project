@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
   def update
     message = Message.find(params[:id])
     message.update(messages_params)
-    chatroom = ChatRoom.find(messages_params[:chatroom_id])
+    chatroom = Chatroom.find(messages_params[:chatroom_id])
     ChatroomsChannel.broadcast_to(chatroom, {
       chatroom: chatroom,
       users: chatroom.users,

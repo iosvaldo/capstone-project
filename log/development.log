@@ -6352,3 +6352,697 @@ Completed 204 No Content in 17ms (ActiveRecord: 2.7ms | Allocations: 5534)
 
 
 ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[], "messages"=>[]} (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Started GET "/me" for 127.0.0.1 at 2022-07-26 11:21:39 -0400
+Started GET "/users" for 127.0.0.1 at 2022-07-26 11:21:39 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (1.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.9ms)
+Completed 200 OK in 31ms (Views: 10.0ms | ActiveRecord: 11.3ms | Allocations: 23625)
+
+
+[active_model_serializers]   [1m[36mChatroom Load (1.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.67ms)
+Completed 200 OK in 29ms (Views: 11.3ms | ActiveRecord: 17.2ms | Allocations: 22572)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-26 11:21:40 -0400
+Started GET "/users" for 127.0.0.1 at 2022-07-26 11:21:40 -0400
+Processing by UsersController#show as */*
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mChatroom Load (1.8ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (3.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mChatroom Load (1.0ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.52ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 3.7ms | Allocations: 5636)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.91ms)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 3.2ms | Allocations: 6509)
+
+
+Started GET "/cable" for ::1 at 2022-07-26 11:21:40 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:21:40 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/chatrooms/2" for 127.0.0.1 at 2022-07-26 11:21:40 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Processing by ChatroomsController#show as */*
+  Parameters: {"id"=>"2"}
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+  [1m[36mChatroom Load (1.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/chatrooms_controller.rb:13:in `show'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+[active_model_serializers]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers] Rendered ChatroomSerializer with ActiveModelSerializers::Adapter::Attributes (3.83ms)
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 2.2ms | Allocations: 4719)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2022-07-26 11:21:47 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 19ms (Views: 3.2ms | ActiveRecord: 4.4ms | Allocations: 3303)
+
+
+Started GET "/cable" for ::1 at 2022-07-26 11:21:48 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:21:48 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/chatrooms/2" for 127.0.0.1 at 2022-07-26 11:21:48 -0400
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8x)
+Processing by ChatroomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/chatrooms_controller.rb:13:in `show'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers] Rendered ChatroomSerializer with ActiveModelSerializers::Adapter::Attributes (8.64ms)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 2.1ms | Allocations: 3136)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:21:56 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"hi\n", "user_id"=>1, "chatroom_id"=>"2", "message"=>{"user_id"=>1, "chatroom_id"=>"2", "message_body"=>"hi\n"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["chatroom_id", 2], ["message_body", "hi\n"], ["created_at", "2022-07-26 15:21:56.209151"], ["updated_at", "2022-07-26 15:21:56.209151"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 15, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:21:56.209151000 +0000", updated_at: "2022-07-26 15:21:56.209151000 +0000">]>}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 43ms (Views: 3.4ms | ActiveRecord: 8.8ms | Allocations: 11985)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:22:03 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"hello", "user_id"=>2, "chatroom_id"=>"2", "message"=>{"user_id"=>2, "chatroom_id"=>"2", "message_body"=>"hello"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["chatroom_id", 2], ["message_body", "hello"], ["created_at", "2022-07-26 15:22:03.298737"], ["updated_at", "2022-07-26 15:22:03.298737"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 15, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:21:56.209151000 +0000", updated_at: "2022-07-26 15:21:56.209151000 +0000">, #<Message id: 16, user_id: 2, chatroom_id: 2, message_body: "hello", created_at: "2022-07-26 15:22:03.298737000 +0000", updated_at: "2022-07-26 15:22:03.298737000 +0000">]>}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 29ms (Views: 1.9ms | ActiveRecord: 4.0ms | Allocations: 9280)
+
+
+Started GET "/chatrooms/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-26 11:23:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/chatrooms/babel/parser/lib/index.js"):
+  
+Started GET "/chatrooms/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-26 11:23:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/chatrooms/babel/parser/lib/index.js"):
+  
+Started DELETE "/messages/15" for 127.0.0.1 at 2022-07-26 11:23:24 -0400
+Processing by MessagesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:31:in `destroy'
+  [1m[36mMessage Destroy (1.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/messages_controller.rb:32:in `destroy'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 16, user_id: 2, chatroom_id: 2, message_body: "hello", created_at: "2022-07-26 15:22:03.298737000 +0000", updated_at: "2022-07-26 15:22:03.298737000 +0000">]>}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+Completed 204 No Content in 30ms (ActiveRecord: 3.3ms | Allocations: 6158)
+
+
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>2, "name"=>"Beddy", "username"=>"Beddy", "password_digest"=>"$2a$12$60JQP/Y9xortTM6yhSdkZOSAqUGaMB/Tf7tRyL5txPXNuNC/p1QNy", "c... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>2, "name"=>"Beddy", "username"=>"Beddy", "password_digest"=>"$2a$12$60JQP/Y9xortTM6yhSdkZOSAqUGaMB/Tf7tRyL5txPXNuNC/p1QNy", "c... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Started DELETE "/messages/16" for 127.0.0.1 at 2022-07-26 11:23:36 -0400
+Processing by MessagesController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:31:in `destroy'
+  [1m[36mMessage Destroy (0.7ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/messages_controller.rb:32:in `destroy'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy []>, :messages=>#<ActiveRecord::Associations::CollectionProxy []>}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+Completed 204 No Content in 19ms (ActiveRecord: 2.8ms | Allocations: 5437)
+
+
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[], "messages"=>[]} (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[], "messages"=>[]} (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Finished "/cable/" [WebSocket] for ::1 at 2022-07-26 11:26:14 -0400
+ChatroomsChannel stopped streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started GET "/me" for 127.0.0.1 at 2022-07-26 11:26:15 -0400
+Started GET "/users" for 127.0.0.1 at 2022-07-26 11:26:15 -0400
+Processing by UsersController#show as */*
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.64ms)
+[active_model_serializers]   [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 3841)
+
+
+[active_model_serializers]   [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.54ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.2ms | Allocations: 6468)
+
+
+Started GET "/cable" for ::1 at 2022-07-26 11:26:15 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:26:15 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/chatrooms/2" for 127.0.0.1 at 2022-07-26 11:26:15 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+Processing by ChatroomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/chatrooms_controller.rb:13:in `show'
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers] Rendered ChatroomSerializer with ActiveModelSerializers::Adapter::Attributes (2.23ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 3136)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-07-26 11:27:52 -0400
+ChatroomsChannel stopped streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started GET "/users" for 127.0.0.1 at 2022-07-26 11:27:52 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-26 11:27:52 -0400
+Processing by UsersController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mChatroom Load (2.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (0.9ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mChatroom Load (1.0ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.66ms)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 1.9ms | Allocations: 5326)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.32ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 3.4ms | Allocations: 6861)
+
+
+Started GET "/cable" for ::1 at 2022-07-26 11:27:52 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:27:52 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/chatrooms/2" for 127.0.0.1 at 2022-07-26 11:27:52 -0400
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+Processing by ChatroomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mChatroom Load (0.1ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+  ↳ app/controllers/chatrooms_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers] Rendered ChatroomSerializer with ActiveModelSerializers::Adapter::Attributes (2.28ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.3ms | Allocations: 3129)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:30:32 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"hi\n", "user_id"=>1, "chatroom_id"=>"2", "message"=>{"user_id"=>1, "chatroom_id"=>"2", "message_body"=>"hi\n"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.4ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["chatroom_id", 2], ["message_body", "hi\n"], ["created_at", "2022-07-26 15:30:32.051897"], ["updated_at", "2022-07-26 15:30:32.051897"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">]>}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 36ms (Views: 1.9ms | ActiveRecord: 6.0ms | Allocations: 8604)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:30:38 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"hello", "user_id"=>2, "chatroom_id"=>"2", "message"=>{"user_id"=>2, "chatroom_id"=>"2", "message_body"=>"hello"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["chatroom_id", 2], ["message_body", "hello"], ["created_at", "2022-07-26 15:30:38.023803"], ["updated_at", "2022-07-26 15:30:38.023803"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">, #<Message id: 18, user_id: 2, chatroom_id: 2, message_body: "hello", created_at: "2022-07-26 15:30:38.023803000 +0000", updated_at: "2022-07-26 15:30:38.023803000 +0000">]>}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 32ms (Views: 1.7ms | ActiveRecord: 5.2ms | Allocations: 9251)
+
+
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Started DELETE "/messages/18" for 127.0.0.1 at 2022-07-26 11:33:38 -0400
+Processing by MessagesController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:31:in `destroy'
+  [1m[36mMessage Destroy (0.8ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/messages_controller.rb:32:in `destroy'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">]>}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+Completed 204 No Content in 20ms (ActiveRecord: 3.1ms | Allocations: 6053)
+
+
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:33:43 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"yoooo", "user_id"=>2, "chatroom_id"=>"2", "message"=>{"user_id"=>2, "chatroom_id"=>"2", "message_body"=>"yoooo"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (12.7ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["chatroom_id", 2], ["message_body", "yoooo"], ["created_at", "2022-07-26 15:33:43.475305"], ["updated_at", "2022-07-26 15:33:43.475305"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (4.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">, #<Message id: 19, user_id: 2, chatroom_id: 2, message_body: "yoooo", created_at: "2022-07-26 15:33:43.475305000 +0000", updated_at: "2022-07-26 15:33:43.475305000 +0000">]>}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 48ms (Views: 0.6ms | ActiveRecord: 33.9ms | Allocations: 9033)
+
+
+Started PATCH "/messages/19" for 127.0.0.1 at 2022-07-26 11:33:50 -0400
+Processing by MessagesController#update as */*
+  Parameters: {"user_id"=>2, "message_body"=>"yoooo how are you ", "chatroom_id"=>2, "id"=>"19", "message"=>{"user_id"=>2, "chatroom_id"=>2, "message_body"=>"yoooo how are you "}}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mMessage Update (0.5ms)[0m  [1m[33mUPDATE "messages" SET "message_body" = $1, "updated_at" = $2 WHERE "messages"."id" = $3[0m  [["message_body", "yoooo how are you "], ["updated_at", "2022-07-26 15:33:50.783341"], ["id", 19]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.5ms | Allocations: 5870)
+
+
+  
+NameError (uninitialized constant MessagesController::ChatRoom
+Did you mean?  Chatroom):
+  
+app/controllers/messages_controller.rb:21:in `update'
+Started GET "/cable" for ::1 at 2022-07-26 11:35:42 -0400
+Started GET "/cable" for ::1 at 2022-07-26 11:35:42 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:35:42 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 11:35:42 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8x)
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started PATCH "/messages/19" for 127.0.0.1 at 2022-07-26 11:35:51 -0400
+Processing by MessagesController#update as */*
+  Parameters: {"user_id"=>2, "message_body"=>"yoooo how are you ?", "chatroom_id"=>2, "id"=>"19", "message"=>{"user_id"=>2, "chatroom_id"=>2, "message_body"=>"yoooo how are you ?"}}
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:19:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mMessage Update (0.4ms)[0m  [1m[33mUPDATE "messages" SET "message_body" = $1, "updated_at" = $2 WHERE "messages"."id" = $3[0m  [["message_body", "yoooo how are you ?"], ["updated_at", "2022-07-26 15:35:51.886631"], ["id", 19]]
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:20:in `update'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:21:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">, #<Message id: 19, user_id: 2, chatroom_id: 2, message_body: "yoooo how are you ?", created_at: "2022-07-26 15:33:43.475305000 +0000", updated_at: "2022-07-26 15:35:51.886631000 +0000">]>}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:22:in `update'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 47ms (Views: 4.6ms | ActiveRecord: 9.4ms | Allocations: 19665)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2022-07-26 11:51:17 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (Allocations: 216)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2022-07-26 11:51:32 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 39ms (Views: 3.0ms | ActiveRecord: 15.9ms | Allocations: 6561)
+
+
+Started POST "/signin" for 127.0.0.1 at 2022-07-26 11:51:50 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Adam", "password"=>"[FILTERED]", "session"=>{"username"=>"Adam", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Adam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mChatroom Load (1.9ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.01ms)
+Completed 201 Created in 297ms (Views: 7.1ms | ActiveRecord: 2.5ms | Allocations: 4889)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2022-07-26 11:51:54 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 678)
+
+
+Started GET "/chatrooms/2" for 127.0.0.1 at 2022-07-26 11:51:55 -0400
+Processing by ChatroomsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/chatrooms_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/chatrooms_controller.rb:14:in `show'
+[active_model_serializers] Rendered ChatroomSerializer with ActiveModelSerializers::Adapter::Attributes (7.47ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 3241)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-07-26 11:52:30 -0400
+ChatroomsChannel stopped streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started GET "/users" for 127.0.0.1 at 2022-07-26 11:52:31 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-26 11:52:31 -0400
+Processing by UsersController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 4790)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mChatroom Load (1.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "messages" ON "chatrooms"."id" = "messages"."chatroom_id" WHERE "messages"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.04ms)
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 6.6ms | Allocations: 10151)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2022-07-26 11:52:34 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 192)
+
+
+Started GET "/rooms/4" for 127.0.0.1 at 2022-07-26 11:52:44 -0400
+Processing by RoomsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 664)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:57:44 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"sdvsfgsf", "user_id"=>2, "chatroom_id"=>"2", "message"=>{"user_id"=>2, "chatroom_id"=>"2", "message_body"=>"sdvsfgsf"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["chatroom_id", 2], ["message_body", "sdvsfgsf"], ["created_at", "2022-07-26 15:57:44.030225"], ["updated_at", "2022-07-26 15:57:44.030225"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">, #<Message id: 19, user_id: 2, chatroom_id: 2, message_body: "yoooo how are you ?", created_at: "2022-07-26 15:33:43.475305000 +0000", updated_at: "2022-07-26 15:35:51.886631000 +0000">, #<Message id: 20, user_id: 2, chatroom_id: 2, message_body: "sdvsfgsf", created_at: "2022-07-26 15:57:44.030225000 +0000", updated_at: "2022-07-26 15:57:44.030225000 +0000">]>}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 29ms (Views: 0.9ms | ActiveRecord: 4.5ms | Allocations: 9726)
+
+
+Started POST "/messages" for 127.0.0.1 at 2022-07-26 11:58:23 -0400
+Processing by MessagesController#create as JSON
+  Parameters: {"message_body"=>"sdfsafa", "user_id"=>2, "chatroom_id"=>"2", "message"=>{"user_id"=>2, "chatroom_id"=>"2", "message_body"=>"sdfsafa"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chatroom_id", "message_body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["chatroom_id", 2], ["message_body", "sdfsafa"], ["created_at", "2022-07-26 15:58:23.824479"], ["updated_at", "2022-07-26 15:58:23.824479"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["chatroom_id", 2], ["LIMIT", 11]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[ActionCable] Broadcasting to chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg: {:chatroom=>#<Chatroom id: 2, room_name: "Back End", created_at: "2022-07-26 13:48:23.046474000 +0000", updated_at: "2022-07-26 13:48:23.046474000 +0000", is_private: false>, :users=>#<ActiveRecord::Associations::CollectionProxy [#<User id: 1, name: "Adam", username: "Adam", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.468665000 +0000", updated_at: "2022-07-26 13:48:23.468665000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>, #<User id: 2, name: "Beddy", username: "Beddy", password_digest: [FILTERED], created_at: "2022-07-26 13:48:23.869379000 +0000", updated_at: "2022-07-26 13:48:23.869379000 +0000", has_agreed: true>]>, :messages=>#<ActiveRecord::Associations::CollectionProxy [#<Message id: 17, user_id: 1, chatroom_id: 2, message_body: "hi\n", created_at: "2022-07-26 15:30:32.051897000 +0000", updated_at: "2022-07-26 15:30:32.051897000 +0000">, #<Message id: 19, user_id: 2, chatroom_id: 2, message_body: "yoooo how are you ?", created_at: "2022-07-26 15:33:43.475305000 +0000", updated_at: "2022-07-26 15:35:51.886631000 +0000">, #<Message id: 20, user_id: 2, chatroom_id: 2, message_body: "sdvsfgsf", created_at: "2022-07-26 15:57:44.030225000 +0000", updated_at: "2022-07-26 15:57:44.030225000 +0000">, #<Message id: 21, user_id: 2, chatroom_id: 2, message_body: "sdfsafa", created_at: "2022-07-26 15:58:23.824479000 +0000", updated_at: "2022-07-26 15:58:23.824479000 +0000">]>}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "messages" ON "users"."id" = "messages"."user_id" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chatroom_id" = $1[0m  [["chatroom_id", 2]]
+  ↳ app/controllers/messages_controller.rb:46:in `broadcast'
+[active_model_serializers] Rendered MessageSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+ChatroomsChannel transmitting {"chatroom"=>{"id"=>2, "room_name"=>"Back End", "created_at"=>"2022-07-26T13:48:23.046Z", "updated_at"=>"2022-07-26T13:48:23.046Z", "is_private"=>false}, "users"=>[{"id"=>1, "name"=>"Adam", "username"=>"Adam", "password_digest"=>"$2a$12$deU9lnDFgWfpZMQq4rDL9ebj1RRuDz0sMV0o7LbvBP1FZfdSJCIB2", "cre... (via streamed from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg)
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 3.9ms | Allocations: 10310)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2022-07-26 12:36:18 -0400
+ChatroomsChannel stopped streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started GET "/cable" for ::1 at 2022-07-26 12:44:09 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 12:44:09 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Finished "/cable/" [WebSocket] for ::1 at 2022-07-26 13:21:30 -0400
+ChatroomsChannel stopped streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
+Started GET "/cable" for ::1 at 2022-07-26 13:22:02 -0400
+Started GET "/cable/" [WebSocket] for ::1 at 2022-07-26 13:22:02 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvVXNlci8y)
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/chatrooms_channel.rb:4:in `subscribed'
+ChatroomsChannel is transmitting the subscription confirmation
+ChatroomsChannel is streaming from chatrooms:Z2lkOi8vcmVhY3QtcmFpbHMtYXBpLXByb2plY3QtdGVtcGxhdGUvQ2hhdHJvb20vMg
