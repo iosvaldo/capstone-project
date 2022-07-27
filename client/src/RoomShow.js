@@ -4,13 +4,13 @@ import MessagesArea from "./MessagesArea"
 import RoomWebSocket from "./RoomWebSocket"
 import Search from "./Search"
 
-// import "./css/Chat.css"
+import "./css/Chat.css"
 
 function RoomShow({
-	cableApp,
-	updateApp,
-	handleMessageUpdate,
-	currentUser,
+cableApp,
+updateApp,
+handleMessageUpdate,
+currentUser,
 }) {
 	const [newMessage, setNewMessage] = useState("")
 	const [getData, setGetData] = useState({})

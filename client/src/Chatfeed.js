@@ -3,6 +3,9 @@ import { MdDeleteForever } from "react-icons/md"
 import { GiHelp } from "react-icons/gi"
 import { FaRegEdit } from "react-icons/fa"
 import EditMessage from "./EditMessage"
+
+
+
 function Chatfeed({
 	currentUser,
 	room,
@@ -32,14 +35,14 @@ function Chatfeed({
 		}
 	}
 	return (
-		<div id="chat-message" className={whichUser()}>
+		<div id="chat-message" class="imessage" className={whichUser()}>
 			{user !== undefined && (
 				<i style={{ float: "left", fontSize: "8px" }}>{user.username}</i>
 			)}
 			<img
 				style={{ height: "auto", width: "30px", float: "right" }}
 				src="https://yorktonrentals.com/wp-content/uploads/2017/06/usericon.png"
-				alt="avatar"
+				alt=""
 			/>
 			<p style={{ color: "black", height: "auto" }}>{message.message_body}</p>
 			{timestamp !== "Invalid Date" ? (

@@ -11,7 +11,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Disclaimer from "./Disclaimer"
 import "bootstrap/dist/css/bootstrap.min.css"
 
+
 function App({ cableApp }) {
+
+	
+
+
+
 	const [currentUser, setCurrentUser] = useState(null)
 	const [allUsers, setAllUsers] = useState([])
 	const [currentRoom, setCurrentRoom] = useState({
@@ -72,6 +78,7 @@ function App({ cableApp }) {
 	return (
 		<Router>
 			<div className="App">
+				
 				<Navbar user={currentUser} setUser={setCurrentUser} />
 				<Routes>
 					<Route exact path="/" element={<Home></Home>} />
@@ -107,6 +114,7 @@ function App({ cableApp }) {
 				<Footer />
 			</div>
 		</Router>
+		
 	)
 }
 

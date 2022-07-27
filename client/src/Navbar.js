@@ -1,7 +1,8 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { useNavigate } from "react-router"
-// import "./css/Navbar.css"
+import { HiOutlineHome }from "react-icons/hi"
+import "./css/Navbar.css"
 
 function Navbar({ user, setUser }) {
 	const navigate = useNavigate("/")
@@ -20,12 +21,12 @@ function Navbar({ user, setUser }) {
 			<ul className="nav-list">
 				<li>
 					<NavLink to="/" className="nav-items">
-						Home
+						<HiOutlineHome></HiOutlineHome>
 					</NavLink>
 				</li>
 				{user != null ? (
 					<>
-						<li className="nav-items">{`Hi , ${user.name.toUpperCase()}`}</li>
+						<li className="nav-items name-title">{`Hi , ${user.name.toUpperCase()}`}</li>
 						<li>
 							<button className="nav-button" onClick={handleSignout}>
 								Sign out
