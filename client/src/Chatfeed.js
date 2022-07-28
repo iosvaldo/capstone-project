@@ -35,7 +35,7 @@ function Chatfeed({
 		}
 	}
 	return (
-		<div id="chat-message" class="imessage" className={whichUser()}>
+		<div id="chat-message" className={whichUser()}>
 			{user !== undefined && (
 				<i style={{ float: "left", fontSize: "8px" }}>{user.username}</i>
 			)}

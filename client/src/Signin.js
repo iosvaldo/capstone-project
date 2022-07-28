@@ -47,7 +47,7 @@ function Signin({ onSignin }) {
 				r.json().then((err) => {
 					console.log(err)
 					console.log(err.errors)
-					// setErrors(err.errors)
+					setErrors(err.errors)
 				})
 			}
 		})
@@ -89,7 +89,7 @@ function Signin({ onSignin }) {
 								<MdPassword />
 							</label>
 							{errors.map((err) => (
-								<Alert
+								<div
 									variant="danger"
 									style={{
 										width: "fit-content",
@@ -100,7 +100,7 @@ function Signin({ onSignin }) {
 									}}
 								>
 									{err}
-								</Alert>
+								</div>
 							))}
 							<input
 								type="password"

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import "./css/Chat.css"
 import { FiSend } from "react-icons/fi"
 import { Button } from "react-bootstrap"
@@ -13,24 +13,27 @@ function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
   // };
 
 	return (
-		
-		<form id="chat-form" className="message-form" onSubmit={submitMessage}>
-			<textarea
+    <div className="form-div">
+      <form id="chat-form" className="message-form" onSubmit={submitMessage}>
+        <input
+				style={{overflowY:" hidden"}}
 				type="text"
-				className="message-input"
+				// className="message-input"
 				placeholder="Post new message... "
 				value={newMessage}
 				onChange={onMessageInput}
 				
-			></textarea>
+			></input>
 		
 			<Button className="send-button" type="submit">
 				Send<FiSend></FiSend>
-				
-			</Button>
-			
-		</form>
-		// <div>
+          </Button>
+       
+      </form>
+    </div>
+
+
+    // <div>
     //   {chosenEmoji ? (
     //     <span>You chose: {chosenEmoji.emoji}</span>
     //   ) : (
@@ -38,7 +41,7 @@ function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
     //   )}
     //   <Picker onEmojiClick={onEmojiClick} />
     // </div>
-	)
+  );
 }
 
 export default MessagesArea

@@ -1,14 +1,12 @@
 .nav-container {
-	height: 70px;
 	background-color: rgb(238, 238, 238);
 	width: 100%;
 	overflow: auto;
 	margin: 0;
 	padding: 0;
-	position: sticky;
+	position: static;
 	z-index: 1;
-	transition: top 0.3s;
-	margin: auto;
+
 }
 
 .nav-list {
@@ -16,17 +14,12 @@
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
-	margin: 3% 0 0 auto;
+	margin: 3% 0 3% auto;
 }
 
 .nav-items {
 	text-decoration: none;
-	font-family: "SF Pro Text",
-		"SF Pro Icons",
-		"Helvetica Neue",
-		Helvetica,
-		Arial,
-		sans-serif;
+	font-family: 'Inconsolata', monospace;
 	font-size: 1.5rem;
 	color:rgb(16,20,25)
 }
@@ -37,12 +30,7 @@
 
 .nav-button {
 	text-decoration: none;
-	font-family: "SF Pro Text",
-		"SF Pro Icons",
-		"Helvetica Neue",
-		Helvetica,
-		Arial,
-		sans-serif;
+	font-family: 'Inconsolata', monospace;
 	font-size: 1.5rem;
 	background-color: transparent;
 	background-repeat: no-repeat;

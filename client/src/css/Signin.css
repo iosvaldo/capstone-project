@@ -1,14 +1,14 @@
 .App {
 	min-height: 100vh;
-	color: white;
+	/* color: white; */
 	overflow: hidden;
-	background-color: #8cd180;
-	/* background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 53%); */
+	/* background-color: #8cd180; */
 }
 
 .appAside {
 	width: 50%;
 }
+
 /* this was at width 50%  */
 .appForm {
 	width: 50%;
