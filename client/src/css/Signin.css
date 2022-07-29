@@ -1,5 +1,5 @@
 .App {
-	min-height: 100vh;
+	min-height: 90vh;
 	/* color: white; */
 	overflow: hidden;
 	/* background-color: #8cd180; */
@@ -25,10 +25,13 @@
 .pageSwitcher {
 	display: flex;
 	justify-content: flex-end;
+	margin:auto;
 	margin-bottom: 10%;
 }
 
 .pageSwitcherItem {
+	margin-top:3%;
+	align-self: flex-end;
 	background-color: #355c70;
 	color: #9da6b1;
 	padding: 10px 25px;
@@ -54,18 +57,15 @@
 	border-bottom-right-radius: 25px;
 }
 
-.formCenter {
-	margin-bottom: 100px;
-}
 
 .formTitle {
-	color: #f8b195;
+
 	font-weight: 300;
 	margin-bottom: 50px;
 }
 
 .formTitleLink {
-	color: #f8b195;
+	
 	text-decoration: none;
 	display: inline-block;
 	font-size: 1.7em;
@@ -83,7 +83,9 @@
 }
 
 .formField {
-	margin-bottom: 40px;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
 }
 
 .formFieldLabel {
@@ -110,8 +112,9 @@
 }
 
 .formFieldButton {
-	background-color: #6b5b95;
-	color: white;
+	background-color: #000;
+	margin-top:10%;
+	color: #fff;
 	border: none;
 	outline: none;
 	border-radius: 25px;
@@ -149,4 +152,36 @@
 
 .socialMediaButtons {
 	padding: 10px 100px 10px 0px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	/* align-items: center; */
+	padding-top: 10px;
+
+}
+
+.formCenter {
+	align-self: center;
+	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+}
+
+#sign-up-button {
+	align-self: center;
+	justify-self: center;
+
+}
+
+#buttons-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#member-text {
+	margin-top: 10px;
 }

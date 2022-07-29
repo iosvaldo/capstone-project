@@ -11,18 +11,25 @@
 	width: 30%;
 	border: 1px solid rgb(166, 162, 162);
 	background-color: rgb(238, 238, 238);
+	margin-top:140px;
+	max-height: 62.3vh;
+	display: inline;
+	/* listStyle: none; */
+	overflow: scroll;
+	float: left;
+			
 	
 }
 
-/* .user-board{
-			
-} */
 
 .chat-board-title{
 	text-align: center;
 	font-family: 'Inconsolata', monospace;
 	letter-spacing: 1px;
-	margin: 0 !important;	
+	margin: auto;
+	position:fixed;	
+	display: inline;
+
 }
 
 .avatar-img{
@@ -50,7 +57,10 @@
 	
 }
 #messages {
-	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 80vh;
 	overflow-y: scroll;
 	width: 100%;
 	background-color: rgb(233, 233, 233);
@@ -66,10 +76,13 @@
 	width: 100%;
 }
 
-.form-div{
-	position: absolute;
-		bottom: 1%;
-		width:76.5%;
+#form-div{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/* position: absolute; */
+	width:100%;
+	height: 60px
 }
 
 #chat-message {
@@ -102,9 +115,14 @@
 	transition: all var(--dur) var(--bez);
 	margin-bottom: 3%;
 }
+
+#send-button {
+	height: 60px;
+}
+
 .send-button {
 	/* opacity: 0.8; */
-	background-color: lavenderblush;
+	background-color: white;
 	float: right;
 	/* margin: 0%; */
 	padding: 10px;
@@ -135,4 +153,8 @@ form.edit-message input[type="text"]:focus {
 }
 #chat-form {
 	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-style: none;
 }
+

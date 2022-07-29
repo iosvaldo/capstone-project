@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Chatfeed from "./Chatfeed";
 import MessagesArea from "./MessagesArea";
 import RoomWebSocket from "./RoomWebSocket";
@@ -16,6 +16,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   const [users, setUsers] = useState([]);
   const [messages, setmessages] = useState([]);
   const [search, setSearch] = useState("");
+  const bottomRef = useRef(null);
   const chatroomId = window.location.href.match(/\d+$/)[0];
   console.log(messages);
 
@@ -60,12 +61,18 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                 <Image className="avatar-img" alt="avatar" src={userImage} />
                 <List.Content
                   style={{
-                    display: "inline"
+                    display: "inline",
+                    overflowY: "scroll",
+                    scrollBehavior: "smooth"
+                   
                   }}
                 >
                   <List.Header
                     style={{
                       display: "inline",
+                      listStyle: "none",
+                      overflowY: "scroll",
+                      float: "left"
                     }}
                   >
                     @{user.username}
@@ -151,43 +158,56 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
 
     const updatedMessages = messages.filter((message) => message.id !== id);
     handleMessageUpdate(updatedMessages);
+
   }
 
-  return (
-    <div className="chat-container">
-      <div className="users">
-        {/* <p style={{ float: "left" }}>#{roomData.chatroom.room_name}</p> */}
-        <hr/>
-        <h4 className="chat-board-title" >Chatroom Members</h4>
+  useEffect(() => {
+    // 👇️ scroll to bottom every time messages change
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
-        <hr/>
-        <Search search={search} setSearch={setSearch}></Search>
-        {getData !== null ? displayUsers(users) : null}
-      </div>
-      <div id="messages" className="message-feed">
-        <div>
-          {messages !== null && messages.length > 0 ? (
-            displayMessages(messages)
-          ) : (
-            <h3 style={{ color: "blue", marginTop: "50px" }}>
-              This room has no message yet
-            </h3>
-          )}
+  return (
+    <div>
+      <div className="chat-container">
+        <hr />
+        <div className="chat-board-title">
+          <hr />
+          <h4>Chatroom Members</h4>
+          <Search search={search} setSearch={setSearch}></Search>
+        </div>
+        <div className="users">
+          {/* <p style={{ float: "left" }}>#{roomData.chatroom.room_name}</p> */}
+
+          {getData !== null ? displayUsers(users) : null}
+        </div>
+        <div id="messages" className="message-feed">
+          <div>
+            {messages !== null && messages.length > 0 ? (
+              displayMessages(messages)
+            ) : (
+              <h3 style={{ color: "blue", marginTop: "50px" }}>
+                This room has no message yet
+              </h3>
+            )}
+            <div ref={bottomRef} />
+          </div>
         </div>
 
+        <RoomWebSocket
+          cableApp={cableApp}
+          updateApp={updateApp}
+          getRoomData={getRoomData}
+          roomData={roomData}
+          actionUpdate={actionUpdate}
+        />
+      </div>
+      <div>
         <MessagesArea
           submitMessage={submitMessage}
           newMessage={newMessage}
           onMessageInput={handleMessageInput}
         />
       </div>
-      <RoomWebSocket
-        cableApp={cableApp}
-        updateApp={updateApp}
-        getRoomData={getRoomData}
-        roomData={roomData}
-        actionUpdate={actionUpdate}
-      />
     </div>
   );
 }

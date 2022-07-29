@@ -1,12 +1,16 @@
 .footer-container {
-	height: 500px;
-	background-color: #1233d8;
+	height: 40px;
+	background-color: rgb(238, 238, 238);
 	position: fixed;
 	width: 100%;
 	overflow: auto;
 	bottom: 0;
 	margin-bottom: 0;
-	padding-bottom: 2.5rem;
+	/* padding-bottom: 2.5rem; */
 	transition: bottom 0.3s;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+
 	/* margin: auto; */
 }
