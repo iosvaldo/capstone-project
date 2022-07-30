@@ -6,6 +6,10 @@ import { BsPersonLinesFill } from "react-icons/bs";
 import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container} from "react-bootstrap";
+// import { Loader } from "@mantine/core";
+
+
+// CSS ClassNames : load-spinner : formCenter :
 
 function Signin({ onSignin }) {
   const [username, setUsername] = useState("");
@@ -52,25 +56,25 @@ function Signin({ onSignin }) {
       }
     });
   }
-
+  //<Loader size="xl" />
   return (
     <>
-      {isLoading ? <h2>Loading...</h2> : null}
-      <Container
-        style={{
-          overflow: "auto",
-          height: "100%",
-          width: "40%",
-          marginTop: "5%",
-          borderStyle: "solid",
-          borderColor: "grey"
-        }}
-      >
+      {isLoading ? (
+        <h2 className="load-spinner">
+          <img
+            src="http://i.giphy.com/13Xkz5sLdjGiQw.gif"
+            alt="loader"
+            style={{ height: "5%", width: "5%" }}
+          />
+          Loading...
+        </h2>
+      ) : null}
+      <Container className="form-container">
         <PageSwitcher />
         <div className="formCenter">
-          <form className="formFields" onSubmit={(e) => handleSubmit(e)}>
+          <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
             <div className="formField">
-              <label className="formFieldLabel" htmlFor="username">
+              <label className="form-icon" htmlFor="username">
                 <BsPersonLinesFill />
               </label>
               <input
@@ -85,7 +89,7 @@ function Signin({ onSignin }) {
             </div>
 
             <div className="formField">
-              <label className="formFieldLabel" htmlFor="password">
+              <label className="form-icon" htmlFor="password">
                 <MdPassword />
               </label>
               {errors.map((err) => (
@@ -112,13 +116,12 @@ function Signin({ onSignin }) {
                 onChange={(e) => handleChange(e)}
               />
             </div>
-
-            <div className="formField">
               <button className="formFieldButton">Sign In</button>{" "}
               <Link exact to="/signup" className="formFieldLink">
                 Create an account
               </Link>
-            </div>
+
+            
           </form>
         </div>
       </Container>

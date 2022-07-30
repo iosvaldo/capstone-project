@@ -4,24 +4,23 @@
 }
 
 .container {
-	background-color: #ffdde1;
+	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-	position: absolute sticky;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); 
+	/* position: absolute; */
 	overflow: hidden;
-	display: inline-flex;
-	flex-wrap: wrap;
-	width: 60%;
-	height: 50vh;
-	padding: 50px;
-	margin-left: 15%;
-	border: 5px solid #355c7d;
+ display: inline-flex;
+	flex-wrap: wrap; 
+	width: 60%; 
+	 height: 50vh; 
+	margin-left: 15%; 
+	 border: 5px solid #355c7d;
 	overflow: hidden;
-	margin: auto;
-	margin-top: 60px;
-	max-width: 100%;
-	min-height: 480px;
+	 margin-top: 60px; 
+	max-width: 100%; 
+	 min-height: 480px;
 }
+
 .app-list {
 	list-style: none;
 	display: flex;

@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaRestroom } from "react-icons/fa";
 import { Accordion } from '@mantine/core';
 // import "./css/Home.css;"
-import "./App.css";
+import "./css/App.css";
 
 
 //CSS Class Names on this page : home-title : chat-room-links 

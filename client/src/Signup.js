@@ -6,6 +6,9 @@ import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container, Alert } from "react-bootstrap";
 
+
+//CSS Classames : form-container
+
 function Signup({ onSignup }) {
   const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
@@ -57,26 +60,17 @@ function Signup({ onSignup }) {
     });
   }
   return (
-    <Container
-      style={{
-        // overflow: "auto",
-        height: "60%",
-        width: "40%",
-        marginTop: "5%",
-        borderStyle: "solid",
-        borderColor: "grey"
-      }}
-    >
+    <Container className="form-container">
       <PageSwitcher />
       <div className="formCenter">
         {errors.map((err) => (
           <Alert variant="danger">{err}</Alert>
         ))}
         <form onSubmit={(e) => handleSubmit(e)} className="formFields">
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="name">
+            <label className="form-icon" htmlFor="name">
               <BsPersonFill />
             </label>
+          <div className="formField">
             <input
               type="text"
               id="name"
@@ -87,10 +81,10 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="username">
+            <label className="form-icon" htmlFor="username">
               <BsPersonLinesFill />
             </label>
+          <div className="formField">
             <input
               type="text"
               id="username"
@@ -102,10 +96,11 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
+
+            <label className="form-icon" htmlFor="password">
               <MdPassword />
             </label>
+          <div className="formField">
             <input
               type="password"
               id="password"
@@ -117,10 +112,10 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className="formField">
-            <label className="formFieldLabel" htmlFor="password">
+            <label className="form-icon" htmlFor="password">
               <MdPassword />
             </label>
+          <div className="formField">
             <input
               type="password"
               id="passwordConfirmation"

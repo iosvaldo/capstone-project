@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { MdDeleteForever } from "react-icons/md"
-import { GiHelp } from "react-icons/gi"
+import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa"
 import EditMessage from "./EditMessage"
 
@@ -35,44 +35,48 @@ function Chatfeed({
 		}
 	}
 	return (
-		<div id="chat-message" className={whichUser()}>
-			{user !== undefined && (
-				<i style={{ float: "left", fontSize: "8px" }}>{user.username}</i>
-			)}
-			<img
-				style={{ height: "auto", width: "30px", float: "right" }}
-				src="https://yorktonrentals.com/wp-content/uploads/2017/06/usericon.png"
-				alt=""
-			/>
-			<p style={{ color: "black", height: "auto" }}>{message.message_body}</p>
-			{timestamp !== "Invalid Date" ? (
-				<i style={{ fontSize: "10px" }}>{timestamp}</i>
-			) : (
-				<i style={{ fontSize: "10px" }}>Edited</i>
-			)}
-			{whichUser() === "current-user-message" && (
-				<GiHelp style={{ float: "left" }} onClick={showEditAndDelete}></GiHelp>
-			)}
-			{showHelp && whichUser() === "current-user-message" ? (
-				<>
-					<MdDeleteForever
-						onClick={() => onDeleteMessage(message.id)}
-						style={{ float: "left" }}
-					></MdDeleteForever>
-					<FaRegEdit
-						onClick={() => setShowEdit(!showEdit)}
-						style={{ float: "left" }}
-					></FaRegEdit>
-					{showEdit && (
-						<EditMessage
-							message={message}
-							onUpdateMessage={handleUpdateMessage}
-						></EditMessage>
-					)}
-				</>
-			) : null}
-		</div>
-	)
+    <div id="chat-message" className={whichUser()}>
+      {user !== undefined && (
+        <i style={{ float: "left", fontSize: "12px" }}>{user.username}</i>
+      )}
+      <img
+        style={{ height: "auto", width: "30px", float: "right" }}
+        src="https://yorktonrentals.com/wp-content/uploads/2017/06/usericon.png"
+        alt=""
+      />
+      <p style={{ color: "black" }}>{message.message_body}</p>
+      {timestamp !== "Invalid Date" ? (
+        <i style={{ fontSize: "10px", marginLeft: "50%"}}>{timestamp}</i>
+      ) : (
+        <i style={{ fontSize: "10px" }}>Edited</i>
+      )}
+      {whichUser() === "current-user-message" && (
+        <HiDotsCircleHorizontal
+          style={{ float: "left" }}
+          onClick={showEditAndDelete}
+        ></HiDotsCircleHorizontal>
+      )}
+      {showHelp && whichUser() === "current-user-message" ? (
+        <>
+          <MdDeleteForever
+            onClick={() => onDeleteMessage(message.id)}
+            style={{ float: "left" }}
+          ></MdDeleteForever>
+					
+          <FaRegEdit
+            onClick={() => setShowEdit(!showEdit)}
+            style={{ float: "left" }}
+          ></FaRegEdit>
+          {showEdit && (
+            <EditMessage
+              message={message}
+              onUpdateMessage={handleUpdateMessage}
+            ></EditMessage>
+          )}
+        </>
+      ) : null}
+    </div>
+  );
 }
 
 export default Chatfeed

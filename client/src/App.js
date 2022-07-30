@@ -1,4 +1,4 @@
-import "./App.css";
+import "./css/App.css";
 import "./css/Home.css";
 import Signup from "./Signup"
 import Signin from "./Signin"

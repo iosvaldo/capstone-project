@@ -4,6 +4,8 @@ import { useNavigate } from "react-router";
 import { HiOutlineHome } from "react-icons/hi";
 import "./css/Navbar.css";
 
+//CSS ClassNames : nav-container : nav-list : nav-items : nav-items name-title : nav-button : pageSwitcherItem
+
 function Navbar({ user, setUser }) {
   const navigate = useNavigate("/");
   function handleSignout() {
@@ -12,7 +14,7 @@ function Navbar({ user, setUser }) {
     }).then((r) => {
       if (r.ok) {
         setUser(null);
-        navigate("/");
+        navigate("/signin");
       }
     });
   }
@@ -28,16 +30,23 @@ function Navbar({ user, setUser }) {
           <>
             <li className="nav-items name-title">{`Hi, ${user.name.toUpperCase()}`}</li>
             <li>
-              <button className="nav-button" onClick={handleSignout}>
+              <NavLink
+                className="nav-button"
+                exact to="/signin"
+                onClick={handleSignout}
+              >
                 Sign out
-              </button>
+              </NavLink>
             </li>
           </>
         ) : (
           <li>
             {" "}
+            <NavLink exact to="/signin" className="nav-items">
+              Sign In
+            </NavLink>{" / "}
             <NavLink exact to="/signup" className="nav-items">
-              Sign up/Sign in
+              Sign Up
             </NavLink>
           </li>
         )}
