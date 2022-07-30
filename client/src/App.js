@@ -1,4 +1,5 @@
-// import "./App.css"
+import "./App.css";
+import "./css/Home.css";
 import Signup from "./Signup"
 import Signin from "./Signin"
 import Home from "./Home"
