@@ -7,7 +7,6 @@ import { Image, List } from "semantic-ui-react";
 import userImage from "./img/hacker.png";
 
 import "./css/Chat.css";
-import { GiBottomRight3DArrow } from "react-icons/gi";
 
 function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   const [newMessage, setNewMessage] = useState("");
@@ -64,7 +63,6 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                     display: "inline",
                     overflowY: "scroll",
                     scrollBehavior: "smooth"
-                   
                   }}
                 >
                   <List.Header
@@ -72,7 +70,8 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                       display: "inline",
                       listStyle: "none",
                       overflowY: "scroll",
-                      float: "left"
+                      padding: "20px"
+                      // float: "left"
                     }}
                   >
                     @{user.username}
@@ -88,26 +87,24 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
       });
   }
 
-  function handleMessageInput(event) {
-    setNewMessage(event.target.value);
+  function handleMessageInput(value) {
+    setNewMessage(value);
   }
-  const message = {
-    message_body: newMessage,
-    user_id: currentUser.id,
-    chatroom_id: chatroomId
-  };
-  function submitMessage(e) {
-    // debugger;
-    e.preventDefault();
-    console.log("helloe")
-    setNewMessage("");
+ 
+  function submitMessage(value) {
+  
+    const mes = {
+      message_body: value,
+      user_id: currentUser.id,
+      chatroom_id: chatroomId
+    };
     fetch("/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
-      body: JSON.stringify(message)
+      body: JSON.stringify(mes)
     })
       .then((resp) => resp.json())
       .then(() => {
@@ -158,7 +155,6 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
 
     const updatedMessages = messages.filter((message) => message.id !== id);
     handleMessageUpdate(updatedMessages);
-
   }
 
   useEffect(() => {
@@ -167,25 +163,22 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   }, [messages]);
 
   return (
-    <div>
+    <div className="chat-room-display">
+      <p style={{ float: "left" }}>{roomData.room_name}</p>
+      <div className="chat-board-title">
+        <h4>Chatroom Members</h4>
+        <Search search={search} setSearch={setSearch}></Search>
+      </div>
+      <div className="users">
+        {getData !== null ? displayUsers(users) : null}
+      </div>
       <div className="chat-container">
-        <hr />
-        <div className="chat-board-title">
-          <hr />
-          <h4>Chatroom Members</h4>
-          <Search search={search} setSearch={setSearch}></Search>
-        </div>
-        <div className="users">
-          {/* <p style={{ float: "left" }}>#{roomData.chatroom.room_name}</p> */}
-
-          {getData !== null ? displayUsers(users) : null}
-        </div>
         <div id="messages" className="message-feed">
           <div>
             {messages !== null && messages.length > 0 ? (
               displayMessages(messages)
             ) : (
-              <h3 style={{ color: "blue", marginTop: "50px" }}>
+              <h3 ClassName="blank-room">
                 This room has no message yet
               </h3>
             )}

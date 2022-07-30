@@ -16,14 +16,7 @@ function Home() {
         borderColor: "grey"
       }}
     >
-      <p
-        style={{
-          fontFamily: "Ariel",
-          fontSize: "50px"
-        }}
-      >
-        What Chatroom are you interested in?
-      </p>
+      <h1>What Chatroom are you interested in?</h1>
       <br />
       <ul className="app-list">
         <li>

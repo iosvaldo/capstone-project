@@ -26,23 +26,25 @@ function EditMessage({ message, onUpdateMessage }) {
 			})
 	}
 	return (
-		<form className="edit-message" onSubmit={(e) => handleFormSubmit(e)}>
-			<input
-				type="text"
-				name="body"
-				autoComplete="off"
-				value={messageBody}
-				onChange={(e) => setMessageBody(e.target.value)}
-			/>
-			<Button
-				className="edit-message"
-				style={{ marginTop: "2px" }}
-				type="Submit"
-			>
-				<HiOutlineSave />
-			</Button>
-		</form>
-	)
+    <form className="edit-message" onSubmit={(e) => handleFormSubmit(e)}>
+      <input
+        type="text"
+        name="body"
+        autoComplete="off"
+        value={messageBody}
+        placeholder="Oops! make a mistake?"
+        onChange={(e) => setMessageBody(e.target.value)}
+      />
+      <Button
+        color="primary"
+        className="edit-message"
+        style={{ marginTop: "5px", borderRadius: "50px", backgroundColor:"rgb(237,117,71)" }}
+        type="Submit"
+      >
+        <HiOutlineSave />
+      </Button>
+    </form>
+  );
 }
 
 export default EditMessage
