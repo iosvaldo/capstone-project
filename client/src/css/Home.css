@@ -1,0 +1,9 @@
+.home-title {
+  text-align:center;
+}
+
+  .home-room-links{
+    text-decoration: none;
+    font-family: 'Inconsolata', monospace;
+    font-size: 30px;
+  }
