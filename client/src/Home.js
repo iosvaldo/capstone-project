@@ -5,24 +5,23 @@ import { FaReact } from "react-icons/fa";
 import { SiRubyonrails } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaRestroom } from "react-icons/fa";
-import { Accordion } from '@mantine/core';
-// import "./css/Home.css;"
+import { MdMeetingRoom } from "react-icons/md";
+import { Accordion } from "@mantine/core";
 import "./css/App.css";
 
-
-//CSS Class Names on this page : home-title : chat-room-links 
+//CSS Class Names on this page : home-title : chat-room-links
 
 function Home() {
   return (
     <Accordion
+      className="home-accordian"
       variant="contained"
       radius="md"
       chevronSize={30}
       defaultValue="customization"
     >
       <h1 className="home-title">
-        What Chatroom are you interested in? <FaRestroom></FaRestroom>
+        What Chatroom are you interested in? <MdMeetingRoom></MdMeetingRoom>
       </h1>
       <Accordion.Item value="customization">
         <Accordion.Control>Front-End</Accordion.Control>

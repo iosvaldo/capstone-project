@@ -1,9 +1,15 @@
 .home-title {
-  text-align:center;
+  text-align: center;
 }
 
-  .home-room-links{
-    text-decoration: none;
-    font-family: 'Inconsolata', monospace;
-    font-size: 30px;
-  }
+.home-room-links {
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  font-size: 30px;
+}
+
+.home-accordian {
+  width: 70%;
+  margin: auto;
+}
+

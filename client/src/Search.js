@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 function Search({ search, setSearch }) {
-	return (
+  return (
     <div className="searchContainer">
       <input
         className="searchArea"
@@ -16,4 +16,4 @@ function Search({ search, setSearch }) {
   );
 }
 
-export default Search
+export default Search;

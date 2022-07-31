@@ -5,8 +5,6 @@ import { Button } from "react-bootstrap";
 import InputEmoji from "react-input-emoji";
 
 function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
-  
-
   return (
     <div id="form-div">
       <form id="chat-form" className="message-form" onSubmit={submitMessage}>

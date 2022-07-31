@@ -5,7 +5,7 @@ import RoomWebSocket from "./RoomWebSocket";
 import Search from "./Search";
 import { Image, List } from "semantic-ui-react";
 import userImage from "./img/hacker.png";
-
+import { FaReact } from "react-icons/fa";
 import "./css/Chat.css";
 
 function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
@@ -90,9 +90,8 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   function handleMessageInput(value) {
     setNewMessage(value);
   }
- 
+
   function submitMessage(value) {
-  
     const mes = {
       message_body: value,
       user_id: currentUser.id,
@@ -164,25 +163,26 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
 
   return (
     <div className="chat-room-display">
-      <p style={{ float: "left" }}>{roomData.room_name}</p>
       <div className="chat-board-title">
+        {/* {`Hi, ${user.name.toUpperCase()}`} */}
+        <p>{roomData.room_name}</p>
         <h4>Chatroom Members</h4>
-        <Search search={search} setSearch={setSearch}></Search>
+        <Search search={search} setSearch={setSearch}></Search>{" "}
       </div>
       <div className="users">
         {getData !== null ? displayUsers(users) : null}
       </div>
       <div className="chat-container">
-        <div id="messages" className="message-feed">
-          <div>
-            {messages !== null && messages.length > 0 ? (
-              displayMessages(messages)
-            ) : (
-              <h3 ClassName="blank-room">
-                This room has no message yet
-              </h3>
-            )}
-            <div ref={bottomRef} />
+        <div className="chat-main">
+          <div id="messages" className="message-feed">
+            <div>
+              {messages !== null && messages.length > 0 ? (
+                displayMessages(messages)
+              ) : (
+                <h3 ClassName="blank-room">This room has no message yet</h3>
+              )}
+              <div ref={bottomRef} />
+            </div>
           </div>
         </div>
 

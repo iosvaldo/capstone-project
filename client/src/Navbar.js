@@ -31,11 +31,12 @@ function Navbar({ user, setUser }) {
             <li className="nav-items name-title">{`Hi, ${user.name.toUpperCase()}`}</li>
             <li>
               <NavLink
-                className="nav-button"
-                exact to="/signin"
+                className="nav-button nav-items name-title"
+                exact
+                to="/signin"
                 onClick={handleSignout}
               >
-                Sign out
+                {`Sign out, ${user.name.toUpperCase()}`}
               </NavLink>
             </li>
           </>
@@ -44,7 +45,8 @@ function Navbar({ user, setUser }) {
             {" "}
             <NavLink exact to="/signin" className="nav-items">
               Sign In
-            </NavLink>{" / "}
+            </NavLink>
+            {" / "}
             <NavLink exact to="/signup" className="nav-items">
               Sign Up
             </NavLink>

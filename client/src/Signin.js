@@ -5,9 +5,8 @@ import { MdPassword } from "react-icons/md";
 import { BsPersonLinesFill } from "react-icons/bs";
 import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 // import { Loader } from "@mantine/core";
-
 
 // CSS ClassNames : load-spinner : formCenter :
 
@@ -64,7 +63,6 @@ function Signin({ onSignin }) {
           <img
             src="http://i.giphy.com/13Xkz5sLdjGiQw.gif"
             alt="loader"
-            style={{ height: "5%", width: "5%" }}
           />
           Loading...
         </h2>
@@ -72,11 +70,13 @@ function Signin({ onSignin }) {
       <Container className="form-container">
         <PageSwitcher />
         <div className="formCenter">
-          <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <div className="formField">
-              <label className="form-icon" htmlFor="username">
-                <BsPersonLinesFill />
-              </label>
+              <div className="form-icon">
+                <label htmlFor="username">
+                  <BsPersonLinesFill />
+                </label>
+              </div>
               <input
                 type="text"
                 id="username"
@@ -89,9 +89,11 @@ function Signin({ onSignin }) {
             </div>
 
             <div className="formField">
-              <label className="form-icon" htmlFor="password">
-                <MdPassword />
-              </label>
+              <div className="form-icon">
+                <label htmlFor="password">
+                  <MdPassword />
+                </label>
+              </div>
               {errors.map((err) => (
                 <div
                   variant="danger"
@@ -116,12 +118,12 @@ function Signin({ onSignin }) {
                 onChange={(e) => handleChange(e)}
               />
             </div>
+            <div id="buttons-div" className="formField">
               <button className="formFieldButton">Sign In</button>{" "}
               <Link exact to="/signup" className="formFieldLink">
                 Create an account
               </Link>
-
-            
+            </div>
           </form>
         </div>
       </Container>

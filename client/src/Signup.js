@@ -6,7 +6,6 @@ import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container, Alert } from "react-bootstrap";
 
-
 //CSS Classames : form-container
 
 function Signup({ onSignup }) {
@@ -67,10 +66,10 @@ function Signup({ onSignup }) {
           <Alert variant="danger">{err}</Alert>
         ))}
         <form onSubmit={(e) => handleSubmit(e)} className="formFields">
+          <div className="formField">
             <label className="form-icon" htmlFor="name">
               <BsPersonFill />
             </label>
-          <div className="formField">
             <input
               type="text"
               id="name"
@@ -81,10 +80,10 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
+          <div className="formField">
             <label className="form-icon" htmlFor="username">
               <BsPersonLinesFill />
             </label>
-          <div className="formField">
             <input
               type="text"
               id="username"
@@ -97,10 +96,10 @@ function Signup({ onSignup }) {
             />
           </div>
 
+          <div className="formField">
             <label className="form-icon" htmlFor="password">
               <MdPassword />
             </label>
-          <div className="formField">
             <input
               type="password"
               id="password"
@@ -112,10 +111,10 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
+          <div className="formField">
             <label className="form-icon" htmlFor="password">
               <MdPassword />
             </label>
-          <div className="formField">
             <input
               type="password"
               id="passwordConfirmation"
