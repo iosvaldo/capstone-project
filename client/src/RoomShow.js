@@ -43,7 +43,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     // if (data === undefined){
     //   return [];
     // }
-    
+
     console.log(data);
     return data
       .map((x) => x)
@@ -97,7 +97,8 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     setNewMessage(value);
   }
 
-  function submitMessage(value) {
+  function submitMessage(value, e) {
+    // e.preventDefault();
     const mes = {
       message_body: value,
       user_id: currentUser.id,

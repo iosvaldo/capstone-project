@@ -13,6 +13,7 @@ class RoomsController < ApplicationController
 
   def create
     room = Room.create!(rooms_params)
+    chatrooms = Chatroom.create!(room_name: params[:room_name])
     render json: room, status: :created
   end
 
