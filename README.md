@@ -1,4 +1,4 @@
-# Action Cable Rails Chat App with React Hooks
+# Action Cable Rails Chat App
 
 ## Description
 
