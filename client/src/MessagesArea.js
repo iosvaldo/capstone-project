@@ -7,18 +7,23 @@ import InputEmoji from "react-input-emoji";
 function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
   return (
     <div id="form-div">
-      <form id="chat-form" className="message-form" onSubmit={submitMessage}>
+      <form id="chat-form" className="message-form">
         <InputEmoji
           style={{ overflowY: " hidden", width: "80%", height: "60px" }}
           type="text"
-          placeholder="Post new message... "
+          placeholder="Write a message... "
           value={newMessage}
           onChange={onMessageInput}
           cleanOnEnter
-          onEnter={submitMessage}
+          onEnter={(e) => submitMessage(newMessage, e)}
         />
 
-        <Button id="send-button" className="send-button" type="submit">
+        <Button
+          id="send-button"
+          className="send-button"
+          type="button"
+          onClick={(e) => submitMessage(newMessage, e)}
+        >
           Send<FiSend></FiSend>
         </Button>
       </form>

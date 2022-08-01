@@ -36,20 +36,19 @@ function Chatfeed({
   return (
     <div id="chat-message" className={whichUser()}>
       {user !== undefined && (
-        <i style={{ float: "left", fontSize: "12px" }}>{user.username}</i>
+        <span className="message-name" >{user.username}</span>
       )}
-      <FaUserCircle
-        style={{ height: "auto", width: "30px", float: "right" }}
+      <FaUserCircle className="default-user-icon" 
       ></FaUserCircle>
-      <p style={{ color: "black" }}>{message.message_body}</p>
+      <p className="message-text" >{message.message_body}</p>
       {timestamp !== "Invalid Date" ? (
-        <i style={{ fontSize: "12px", marginLeft: "10%" }}>{timestamp}</i>
+        <span clasName="timestamp-display">{timestamp}</span>
       ) : (
-        <i style={{ fontSize: "10px" }}>Edited</i>
+        <i  clasName="timestamp-display">Edited</i>
       )}
       {whichUser() === "current-user-message" && (
-        <HiDotsCircleHorizontal
-          style={{ float: "left" }}
+        <HiDotsCircleHorizontal className="three-dots-icons"
+          
           onClick={showEditAndDelete}
         ></HiDotsCircleHorizontal>
       )}

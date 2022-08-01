@@ -14,6 +14,12 @@ class ChatroomsController < ApplicationController
     render json: chatroom
   end
 
+
+  def create
+    chatroom = Chatroom.create(chatroom_params)
+    render json: chatroom, status: :created
+  end
+
   private
 
   def chatroom_params

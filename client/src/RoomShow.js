@@ -5,7 +5,7 @@ import RoomWebSocket from "./RoomWebSocket";
 import Search from "./Search";
 import { Image, List } from "semantic-ui-react";
 import userImage from "./img/hacker.png";
-import { FaReact } from "react-icons/fa";
+// import { FaReact } from "react-icons/fa";
 import "./css/Chat.css";
 
 function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
@@ -38,7 +38,13 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     setUsers(res.users);
     setmessages(res.messages);
   }
+
   function displayUsers(data) {
+    // if (data === undefined){
+    //   return [];
+    // }
+
+    console.log(data);
     return data
       .map((x) => x)
       .filter((user) =>
@@ -91,7 +97,8 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     setNewMessage(value);
   }
 
-  function submitMessage(value) {
+  function submitMessage(value, e) {
+    // e.preventDefault();
     const mes = {
       message_body: value,
       user_id: currentUser.id,
@@ -179,7 +186,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
               {messages !== null && messages.length > 0 ? (
                 displayMessages(messages)
               ) : (
-                <h3 ClassName="blank-room">This room has no message yet</h3>
+                <h3 className="blank-room">This room has no message yet</h3>
               )}
               <div ref={bottomRef} />
             </div>
