@@ -170,14 +170,16 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
 
   return (
     <div className="chat-room-display">
-      <div className="chat-board-title">
-        {/* {`Hi, ${user.name.toUpperCase()}`} */}
-        <p>{roomData.room_name}</p>
-        <h4>Chatroom Members</h4>
-        <Search search={search} setSearch={setSearch}></Search>{" "}
-      </div>
-      <div className="users">
-        {getData !== null ? displayUsers(users) : null}
+      <div className="sidebar">
+        <div className="chat-board-title">
+          {/* {`Hi, ${user.name.toUpperCase()}`} */}
+          <p>{roomData.room_name}</p>
+          <h4>Chatroom Members</h4>
+          <Search search={search} setSearch={setSearch}></Search>{" "}
+        </div>
+        <div className="users">
+          {getData !== null ? displayUsers(users) : null}
+        </div>
       </div>
       <div className="chat-container">
         <div className="chat-main">
@@ -191,6 +193,11 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
               <div ref={bottomRef} />
             </div>
           </div>
+          <MessagesArea
+            submitMessage={submitMessage}
+            newMessage={newMessage}
+            onMessageInput={handleMessageInput}
+          />
         </div>
 
         <RoomWebSocket
@@ -199,13 +206,6 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
           getRoomData={getRoomData}
           roomData={roomData}
           actionUpdate={actionUpdate}
-        />
-      </div>
-      <div>
-        <MessagesArea
-          submitMessage={submitMessage}
-          newMessage={newMessage}
-          onMessageInput={handleMessageInput}
         />
       </div>
     </div>

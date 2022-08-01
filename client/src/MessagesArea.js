@@ -9,7 +9,6 @@ function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
     <div id="form-div">
       <form id="chat-form" className="message-form">
         <InputEmoji
-          style={{ overflowY: " hidden", width: "80%", height: "60px" }}
           type="text"
           placeholder="Write a message... "
           value={newMessage}

@@ -2,6 +2,8 @@
   background-color: rgb(238, 238, 238);
   width: 100%;
   overflow: auto;
+  min-height: 50px;
+  height: 5vh;
   /* margin: 0;
 	padding: 0; */
   position: static;
