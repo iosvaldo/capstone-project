@@ -11,7 +11,7 @@ function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
         <InputEmoji
           style={{ overflowY: " hidden", width: "80%", height: "60px" }}
           type="text"
-          placeholder="Post new message... "
+          placeholder="Write a message... "
           value={newMessage}
           onChange={onMessageInput}
           cleanOnEnter

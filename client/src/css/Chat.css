@@ -9,7 +9,7 @@
 } */
 
 .enter-chatroom-container{
-	margin-top: 20%;
+	margin-top: 30%;
 	border: 1px black solid;
 }
 
@@ -198,6 +198,49 @@ form.edit-message input[type="text"]:focus {
 }
 
 .blank-room {
-  color: blue;
+  color: rgb(76, 190, 6);
   margin-top: 50px;
+  padding:10%;
+  font-weight: 700;
+  font-size: 50px;
+  margin:auto;
+  /* display: inline-block; */
+  text-transform: uppercase;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
 }
+
+.message-name{
+  float:left;
+  font-size: 15px;
+}
+
+.default-user-icon{
+  height:auto;
+  width:30px;
+  float:right;
+}
+
+.message-text{
+  color:black;
+  margin-left:5%;
+  padding-top:5%;
+  word-wrap: break-word;
+  display: block;
+  margin-bottom: 0;
+}
+
+.timestamp-display{
+  font-size:17px;
+  height:auto;
+  width:30px;
+  float:right;
+}
+
+.three-dots-icons{
+  float:left;
+  display:block;
+  /* margin-right: 200px; */
+
+}
+
