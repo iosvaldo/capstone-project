@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Disclaimer from "./Disclaimer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UserProfile from "./UserProfile";
 
 function App({ cableApp }) {
   const [currentUser, setCurrentUser] = useState(null);
@@ -103,6 +104,11 @@ function App({ cableApp }) {
             exact
             path="/rooms/:id"
             element={<Room currentUser={currentUser} />}
+          ></Route>
+          <Route
+            exact
+            path="/profile"
+            element={<UserProfile currentUser={currentUser} />}
           ></Route>
         </Routes>
         <Footer />

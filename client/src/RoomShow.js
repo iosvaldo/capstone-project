@@ -4,9 +4,24 @@ import MessagesArea from "./MessagesArea";
 import RoomWebSocket from "./RoomWebSocket";
 import Search from "./Search";
 import { Image, List } from "semantic-ui-react";
-import userImage from "./img/hacker.png";
+// import userImage from "./img/hacker.png";
+// import userImage1 from "./img/hacker2.png";
+// import userImage2 from "./img/hacker3.png";
+
 // import { FaReact } from "react-icons/fa";
 import "./css/Chat.css";
+
+// let images = [
+//   userImage,
+//   userImage1,
+//   userImage2
+// ],
+// icon = 0;
+// images[0] = userImage;
+// images[1] = userImage1;
+// images[2] = userImage2;
+// icon = Math.floor(Math.random() * images.length);
+// document.write(images[icon]);
 
 function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   const [newMessage, setNewMessage] = useState("");
@@ -17,13 +32,17 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   const [search, setSearch] = useState("");
   const bottomRef = useRef(null);
   const chatroomId = window.location.href.match(/\d+$/)[0];
-  console.log(messages);
+  //console.log(messages);
+
+  //random image 
+
+
 
   useEffect(() => {
     fetch(`/chatrooms/${chatroomId}`)
       .then((resp) => resp.json())
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setGetData(res);
         // handleMessageUpdate(res.messages)
         getRoomData(res);
@@ -44,13 +63,14 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     //   return [];
     // }
 
-    console.log(data);
+    //console.log(data);
     return data
       .map((x) => x)
       .filter((user) =>
         user.username.toLowerCase().includes(search.toLowerCase())
       )
       .map((user) => {
+       
         return (
           <div className="user-board">
             <List
@@ -63,7 +83,6 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
               }}
             >
               <List.Item>
-                <Image className="avatar-img" alt="avatar" src={userImage} />
                 <List.Content
                   style={{
                     display: "inline",
@@ -71,20 +90,19 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                     scrollBehavior: "smooth"
                   }}
                 >
+                  {/* <Image className="avatar-img" alt="avatar" src={images[icon]} /> */}
+                  <Image className="avatar-img" alt="avatar" />
                   <List.Header
                     style={{
                       display: "inline",
                       listStyle: "none",
                       overflowY: "scroll",
-                      padding: "20px"
+                      padding: "30px"
                       // float: "left"
                     }}
                   >
                     @{user.username}
                   </List.Header>
-                  <List.Description>
-                    <p key={user.id} />
-                  </List.Description>
                 </List.Content>
               </List.Item>
             </List>

@@ -37,6 +37,10 @@ function Navbar({ user, setUser }) {
                 onClick={handleSignout}
               >
                 {`Sign out, ${user.name.toUpperCase()}`}
+              </NavLink>{" "}
+              {" / "}
+              <NavLink exact to="/profile" className="nav-items">
+                Profile
               </NavLink>
             </li>
           </>
@@ -49,6 +53,10 @@ function Navbar({ user, setUser }) {
             {" / "}
             <NavLink exact to="/signup" className="nav-items">
               Sign Up
+            </NavLink>
+            {" / "}
+            <NavLink exact to="/profile" className="nav-items">
+              profile
             </NavLink>
           </li>
         )}

@@ -13,6 +13,8 @@ function MessagesArea({ submitMessage, newMessage, onMessageInput }) {
           placeholder="Write a message... "
           value={newMessage}
           onChange={onMessageInput}
+          style={{width:"50px",wordWrap:"break-word"}}
+        
           cleanOnEnter
           onEnter={(e) => submitMessage(newMessage, e)}
         />

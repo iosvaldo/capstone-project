@@ -6,8 +6,6 @@ import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container, Alert } from "react-bootstrap";
 
-//CSS Classames : form-container
-
 function Signup({ onSignup }) {
   const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
@@ -59,7 +57,16 @@ function Signup({ onSignup }) {
     });
   }
   return (
-    <Container className="form-container">
+    <Container
+      style={{
+        // overflow: "auto",
+        height: "60%",
+        width: "40%",
+        marginTop: "5%",
+        borderStyle: "solid",
+        borderColor: "grey"
+      }}
+    >
       <PageSwitcher />
       <div className="formCenter">
         {errors.map((err) => (
@@ -67,7 +74,7 @@ function Signup({ onSignup }) {
         ))}
         <form onSubmit={(e) => handleSubmit(e)} className="formFields">
           <div className="formField">
-            <label className="form-icon" htmlFor="name">
+            <label className="formFieldLabel" htmlFor="name">
               <BsPersonFill />
             </label>
             <input
@@ -81,7 +88,7 @@ function Signup({ onSignup }) {
             />
           </div>
           <div className="formField">
-            <label className="form-icon" htmlFor="username">
+            <label className="formFieldLabel" htmlFor="username">
               <BsPersonLinesFill />
             </label>
             <input
@@ -95,9 +102,8 @@ function Signup({ onSignup }) {
               onChange={(e) => handleChange(e)}
             />
           </div>
-
           <div className="formField">
-            <label className="form-icon" htmlFor="password">
+            <label className="formFieldLabel" htmlFor="password">
               <MdPassword />
             </label>
             <input
@@ -112,7 +118,7 @@ function Signup({ onSignup }) {
             />
           </div>
           <div className="formField">
-            <label className="form-icon" htmlFor="password">
+            <label className="formFieldLabel" htmlFor="password">
               <MdPassword />
             </label>
             <input
