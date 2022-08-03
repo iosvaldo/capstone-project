@@ -91,7 +91,11 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                   }}
                 >
                   {/* <Image className="avatar-img" alt="avatar" src={images[icon]} /> */}
-                  <Image className="avatar-img" alt="avatar" />
+                  <Image
+                    className="avatar-img"
+                    alt="avatar"
+                    src={currentUser.profile_img}
+                  />
                   <List.Header
                     style={{
                       display: "inline",
@@ -135,6 +139,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
         let messageDiv = document.getElementById("messages");
         messageDiv.scrollTop = messageDiv.scrollHeight;
       });
+      setNewMessage("")
   }
   function whichUser(message) {
     const user = roomData.users.find((x) => parseInt(x.id) === message.user_id);
@@ -190,8 +195,8 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     <div className="chat-room-display">
       <div className="sidebar">
         <div className="chat-board-title">
-          {/* {`Hi, ${user.name.toUpperCase()}`} */}
-          <p>{roomData.room_name}</p>
+         
+          <p style={{margin:"2%"}}>{roomData.room_name}</p>
           <h4>Chatroom Members</h4>
           <Search search={search} setSearch={setSearch}></Search>{" "}
         </div>

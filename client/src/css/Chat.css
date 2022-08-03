@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
 .chat-container {
   display: flex;
   flex-direction: row;
@@ -104,7 +104,8 @@
   flex-direction: row;
   justify-content: space-between;
   /* position: absolute; */
-  bottom: 20px;
+  /* bottom: 20px; */
+  align-items: center;
   width: 100%;
   height: 80px;
 }
@@ -144,7 +145,7 @@
   height: 60px;
   border-radius: 100px;
   height: 40px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .send-button {
@@ -244,6 +245,8 @@ form.edit-message input[type="text"]:focus {
   word-wrap: break-word;
   display: block;
   margin-bottom: 0;
+  font-family: 'Mulish', sans-serif;
+;
 }
 
 .timestamp-display {

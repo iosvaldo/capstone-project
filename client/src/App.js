@@ -108,7 +108,7 @@ function App({ cableApp }) {
           <Route
             exact
             path="/profile"
-            element={<UserProfile currentUser={currentUser} />}
+            element={<UserProfile setCurrentUser={setCurrentUser} currentUser={currentUser} />}
           ></Route>
         </Routes>
         <Footer />

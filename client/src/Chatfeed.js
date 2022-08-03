@@ -39,7 +39,9 @@ function Chatfeed({
         <span className="message-name" >{user.username}</span>
       )}
       <FaUserCircle className="default-user-icon" 
-      ></FaUserCircle>
+      >
+        
+      </FaUserCircle>
       <p className="message-text" >{message.message_body}</p>
       {timestamp !== "Invalid Date" ? (
         <span clasName="timestamp-display">{timestamp}</span>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // import { FaReact } from "react-icons/fa";
 // import { SiRubyonrails } from "react-icons/si";
 // import { IoIosPeople } from "react-icons/io";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MdMeetingRoom } from "react-icons/md";
 import { Accordion } from "@mantine/core";
@@ -106,33 +106,13 @@ function Home() {
       <h1 className="home-title">
         What Chatroom are you interested in? <MdMeetingRoom></MdMeetingRoom>
       </h1>
-      {/* <form onSubmit={handleSubmit}>
-        <label>Add room name </label>
-        <input
-        onChange={(e) => setNewChatrooms(e.target.value)}
-        type="text"
-        value={newChatrooms}
-        name="name"
-        placeholder="Enter room name"
-        required="required"
-        />
-        <label>Add room description </label>
-        <input
-        onChange={(e) => setNewRoomDescription(e.target.value)}
-        value={newRoomDescription}
-        type="text"
-        name="name"
-        placeholder="Enter room description"
-        required="required"
-        />
-        <button onClick={handleSubmit}>Create a room</button>
-        
-      </form> */}
+      
       {newUserRooms}
       {/* <Container className="form-container"> */}
       <form onSubmit={handleSubmit}>
         <div className="formField">
           <div className="form-icon">
+            <h2 style={{marginTop: "5%"}}>Create a room</h2>
             <label htmlFor="room-name">{/* <BsPersonLinesFill /> */}</label>
           </div>
           <input
@@ -161,7 +141,7 @@ function Home() {
           />
         </div>
         <div id="buttons-div" className="formField">
-          <button className="formFieldButton">Create New Room</button>{" "}
+          <button className="formFieldButton">Create</button>{" "}
           {/* <Link exact to="/signup" className="formFieldLink">
             Create an account
           </Link> */}

@@ -15,6 +15,7 @@ function Signup({ onSignup }) {
     username: "",
     password: "",
     passwordConfirmation: "",
+    image: "",
     hasAgreed: false
   };
   const [signupForm, setSignupForm] = useState(signupObj);
@@ -22,6 +23,7 @@ function Signup({ onSignup }) {
   function handleChange(event) {
     let target = event.target;
     let value = target.type === "checkbox" ? target.checked : target.value;
+    let image = target.image;
     let name = target.name;
 
     setSignupForm({ ...signupForm, [name]: value });
@@ -39,6 +41,7 @@ function Signup({ onSignup }) {
         username: signupForm.username,
         password: signupForm.password,
         password_confirmation: signupForm.passwordConfirmation,
+        profile_img: signupForm.image,
         has_agreed: signupForm.hasAgreed
       })
     }).then((r) => {
@@ -56,6 +59,8 @@ function Signup({ onSignup }) {
       }
     });
   }
+
+  console.log(signupForm.image)
   return (
     <Container
       style={{
@@ -131,6 +136,15 @@ function Signup({ onSignup }) {
               value={signupForm.passwordConfirmation}
               onChange={(e) => handleChange(e)}
             />
+            <input 
+            type="text"
+            id="enter-image"
+            placeholder="image URL"
+            required
+            name="image"
+            value={signupForm.image}
+            onChange={(e)=>handleChange(e)}>
+            </input>
           </div>
 
           <div className="formField">
