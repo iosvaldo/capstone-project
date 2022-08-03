@@ -14,7 +14,7 @@ chatroom4=Chatroom.create!(room_name:"General")
 
 puts "👥 Seeding Users..."
 user1=User.create!(name:"Adam",username:"Adam",password:"123",password_confirmation:"123",has_agreed: true, profile_img:"https://i.ibb.co/DVz8Xpt/hacker3.png",bio:"My name is Adam, and perfect coding skills can be able to create software that can work with perfection.⭐️")
-user2=User.create!(name:"Beddy",username:"Beddy",password:"123",password_confirmation:"123",has_agreed: true,profile_img:"https://i.ibb.co/rGQd64g/hacker2.png",bio:"We are the ones who can help the computers to take right decisions by creating incredible software.🎤")
+user2=User.create!(name:"Beddy",username:"Beddy",password:"123",password_confirmation:"123",has_agreed: true,profile_img:"https://i.ibb.co/JdNDmCQ/hacker-3.png",bio:"We are the ones who can help the computers to take right decisions by creating incredible software.🎤")
 
 
 

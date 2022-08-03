@@ -4,6 +4,8 @@ import MessagesArea from "./MessagesArea";
 import RoomWebSocket from "./RoomWebSocket";
 import Search from "./Search";
 import { Image, List } from "semantic-ui-react";
+import { Modal } from "@mantine/core";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 // import userImage from "./img/hacker.png";
 // import userImage1 from "./img/hacker2.png";
 // import userImage2 from "./img/hacker3.png";
@@ -32,11 +34,15 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   const [search, setSearch] = useState("");
   const bottomRef = useRef(null);
   const chatroomId = window.location.href.match(/\d+$/)[0];
+  const [showModal, setShowModal] = useState(false);
   //console.log(messages);
 
-  //random image 
+  //random image
 
-
+  const handleModalBtn = () => {
+    console.log("Pressed");
+    setShowModal((showModal) => !showModal);
+  };
 
   useEffect(() => {
     fetch(`/chatrooms/${chatroomId}`)
@@ -70,7 +76,6 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
         user.username.toLowerCase().includes(search.toLowerCase())
       )
       .map((user) => {
-       
         return (
           <div className="user-board">
             <List
@@ -90,12 +95,24 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                     scrollBehavior: "smooth"
                   }}
                 >
-                  {/* <Image className="avatar-img" alt="avatar" src={images[icon]} /> */}
                   <Image
                     className="avatar-img"
                     alt="avatar"
                     src={currentUser.profile_img}
                   />
+                  <button onClick={handleModalBtn}>
+                    <AiOutlineQuestionCircle />
+                  </button>
+                  <div>
+                    {showModal && (
+                      <Modal
+                        transition="fade"
+                        transitionDuration={600}
+                        transitionTimingFunction="ease"
+                        title={currentUser?.bio}
+                      />
+                    )}
+                  </div>
                   <List.Header
                     style={{
                       display: "inline",
@@ -139,7 +156,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
         let messageDiv = document.getElementById("messages");
         messageDiv.scrollTop = messageDiv.scrollHeight;
       });
-      setNewMessage("")
+    setNewMessage("");
   }
   function whichUser(message) {
     const user = roomData.users.find((x) => parseInt(x.id) === message.user_id);
@@ -195,8 +212,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
     <div className="chat-room-display">
       <div className="sidebar">
         <div className="chat-board-title">
-         
-          <p style={{margin:"2%"}}>{roomData.room_name}</p>
+          <p style={{ margin: "2%" }}>{roomData.room_name}</p>
           <h4>Chatroom Members</h4>
           <Search search={search} setSearch={setSearch}></Search>{" "}
         </div>

@@ -4,17 +4,17 @@ import "./css/Userprofile.css";
 import { Container } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 import PageSwitcher from "./PageSwitcher";
-import { MdDeleteForever } from "react-icons/md";
+// import { MdDeleteForever } from "react-icons/md";
 import { HiDotsCircleHorizontal } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 
 // import { Button } from 'react-bootstrap';
 
 function UserProfile({ currentUser, setCurrentUser }) {
   const [openDropDown, setOpenDropDown] = useState(false);
   const [userBio, setUserBio] = useState(" ");
-  const [showEditButton, setShowEditButton] = useState(true);
+  // const [showEditButton, setShowEditButton] = useState(false);
   // console.log(userBio);
 
   const handleSubmit = (e) => {
@@ -45,6 +45,8 @@ function UserProfile({ currentUser, setCurrentUser }) {
     setOpenDropDown(() => !openDropDown);
     // setShowEditButton(false);
   };
+
+ 
   return (
     <Container className="form-container">
       <PageSwitcher />
@@ -68,14 +70,13 @@ function UserProfile({ currentUser, setCurrentUser }) {
                 <strong>{currentUser?.name}</strong>
               </h4>
               <p style={{ display: "inline" }}>BIO:</p>
+              <HiDotsCircleHorizontal onClick={handleEditBioButton} />
+              click to Edit
               <p class="job_post">{currentUser?.bio}</p>
             </label>
           </div>
         </div>
         <div className="profile-btns">
-          <p>Edit Bio</p>
-          <FaRegEdit onClick={handleEditBioButton} />
-
           {openDropDown && (
             <>
               <form>
@@ -84,6 +85,7 @@ function UserProfile({ currentUser, setCurrentUser }) {
                   name="body"
                   autoComplete="off"
                   value={userBio}
+                  required="required"
                   placeholder="edit bio"
                   onChange={(e) => setUserBio(e.target.value)}
                 />
@@ -92,14 +94,13 @@ function UserProfile({ currentUser, setCurrentUser }) {
                   class=" formFieldButton btn btn-primary btn-round"
                   onClick={handleSubmit}
                 >
-                  edit profile
+                  set changes
                 </button>
               </form>
             </>
           )}
           <button
-            class="formFieldButton btn btn-primary btn-round"
-            variant="danger"
+            class="btn btn-primary btn-round"
             onClick={() => navigate("/")}
           >
             back to Chatrooms
