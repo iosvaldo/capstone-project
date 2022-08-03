@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   post "/signin", to: "sessions#create"
   delete "/signout", to: "sessions#destroy"
-  put "/profile", to: "users#update"
+  put "/profile/:id", to: "users#update"
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
