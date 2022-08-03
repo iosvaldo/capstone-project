@@ -4,7 +4,7 @@ import MessagesArea from "./MessagesArea";
 import RoomWebSocket from "./RoomWebSocket";
 import Search from "./Search";
 import { Image, List } from "semantic-ui-react";
-import { Modal } from "@mantine/core";
+import { Modal, useMantineTheme } from "@mantine/core";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 // import userImage from "./img/hacker.png";
 // import userImage1 from "./img/hacker2.png";
@@ -12,6 +12,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 // import { FaReact } from "react-icons/fa";
 import "./css/Chat.css";
+import { MdNoEncryption } from "react-icons/md";
 
 // let images = [
 //   userImage,
@@ -24,8 +25,8 @@ import "./css/Chat.css";
 // images[2] = userImage2;
 // icon = Math.floor(Math.random() * images.length);
 // document.write(images[icon]);
-
 function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
+  const theme = useMantineTheme();
   const [newMessage, setNewMessage] = useState("");
   const [getData, setGetData] = useState({});
   const [roomData, getRoomData] = useState({});
@@ -40,7 +41,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
   //random image
 
   const handleModalBtn = () => {
-    console.log("Pressed");
+    console.log(showModal);
     setShowModal((showModal) => !showModal);
   };
 
@@ -100,19 +101,33 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                     alt="avatar"
                     src={currentUser.profile_img}
                   />
-                  <button onClick={handleModalBtn}>
+                  <button
+                    style={{ border:"none"}}
+                    onClick={handleModalBtn}
+                  >
                     <AiOutlineQuestionCircle />
                   </button>
-                  <div>
-                    {showModal && (
-                      <Modal
-                        transition="fade"
-                        transitionDuration={600}
-                        transitionTimingFunction="ease"
-                        title={currentUser?.bio}
-                      />
-                    )}
-                  </div>
+
+                  <Modal
+                    opened={showModal}
+                    onClose={() => setShowModal(false)}
+                    transition="fade"
+                    transitionDuration={600}
+                    transitionTimingFunction="ease"
+                    // title={currentUser?.name}
+                    overlayColor={
+                      theme.colorScheme === "dark"
+                        ? theme.colors.dark[9]
+                        : theme.colors.gray[2]
+                    }
+                    overlayOpacity={0.2}
+                    overlayBlur={1}
+                  >
+                    {/* Modal content */}
+                    <h1>{currentUser?.name}</h1>
+                    <p>{currentUser?.bio}</p>
+                  </Modal>
+
                   <List.Header
                     style={{
                       display: "inline",
