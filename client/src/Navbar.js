@@ -24,7 +24,7 @@ function Navbar({ user, setUser }) {
     <div className="nav-container">
       <ul className="nav-list">
         
-        <img src={logo} style={{ width: "1%"}} alt="logo" />
+        <img src={logo} style={{ width: "30px",height:"30px"}} alt="logo" />
 
         <li>
           <NavLink to="/home" className="nav-items">

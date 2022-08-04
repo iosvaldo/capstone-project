@@ -12,7 +12,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 // import { FaReact } from "react-icons/fa";
 import "./css/Chat.css";
-import { MdNoEncryption } from "react-icons/md";
+// import { MdNoEncryption } from "react-icons/md";
 
 // let images = [
 //   userImage,
@@ -134,7 +134,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                       display: "inline",
                       listStyle: "none",
                       overflowY: "scroll",
-                      padding: "30px"
+                      padding: "3%"
                       // float: "left"
                     }}
                   >

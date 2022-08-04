@@ -65,13 +65,15 @@ function Signup({ onSignup }) {
   console.log(signupForm.image)
   return (
     <Container
+      className="form-container"
       style={{
         // overflow: "auto",
         height: "60%",
         width: "40%",
         marginTop: "5%",
-        borderStyle: "solid",
-        borderColor: "grey"
+        border: "1px solid black"
+        // borderStyle: "solid",
+        // borderColor: "grey"
       }}
     >
       <PageSwitcher />
