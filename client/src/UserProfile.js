@@ -32,6 +32,10 @@ function UserProfile({ currentUser, setCurrentUser }) {
       .then((r) => r.json())
       .then((data) => {
         setCurrentUser(data);
+        handleEditBioButton();
+        setUserBio('');
+       
+
         // onUpdateBio({...data, id: userB.id });
       });
   };
@@ -101,7 +105,7 @@ function UserProfile({ currentUser, setCurrentUser }) {
           )}
           <button
             class="btn btn-primary btn-round"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/home")}
           >
             back to Chatrooms
           </button>

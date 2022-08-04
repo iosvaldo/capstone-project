@@ -12,11 +12,12 @@
   text-decoration: none;
   font-size: 20px;
   color: #fff;
+  border-top: 1px black solid;
 }
 
 .footer-contact {
   /* text-decoration:none; */
-  color: rgb(28, 31, 35);
+  color: rgb(101, 104, 107);
 }
 
 .social-icons.git {

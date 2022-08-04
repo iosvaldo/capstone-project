@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { HiOutlineHome } from "react-icons/hi";
 import "./css/Navbar.css";
+import logo from "./img/chat-icon-2.png";
+
 
 //CSS ClassNames : nav-container : nav-list : nav-items : nav-items name-title : nav-button : pageSwitcherItem
 
@@ -21,8 +23,11 @@ function Navbar({ user, setUser }) {
   return (
     <div className="nav-container">
       <ul className="nav-list">
+        
+        <img src={logo} style={{ width: "1%"}} alt="logo" />
+
         <li>
-          <NavLink to="/" className="nav-items">
+          <NavLink to="/home" className="nav-items">
             <HiOutlineHome></HiOutlineHome>
           </NavLink>
         </li>

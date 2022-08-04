@@ -6,6 +6,7 @@ import { BsPersonLinesFill } from "react-icons/bs";
 import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import logo from "./img/chat-icon-2.png";
 // import { Loader } from "@mantine/core";
 
 // CSS ClassNames : load-spinner : formCenter :
@@ -44,7 +45,7 @@ function Signin({ onSignin }) {
           onSignin(user);
           setUsername("");
           setPassword("");
-          navigate("/");
+          navigate("/home");
         });
       } else {
         r.json().then((err) => {
@@ -70,6 +71,8 @@ function Signin({ onSignin }) {
       <Container className="form-container">
         <PageSwitcher />
         <div className="formCenter">
+      <img src={logo} style={{width:"12%", margin:"auto"}}alt="logo" />
+          
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="formField">
               <div className="form-icon">

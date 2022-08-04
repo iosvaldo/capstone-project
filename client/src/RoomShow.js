@@ -40,8 +40,9 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
 
   //random image
 
-  const handleModalBtn = () => {
-    console.log(showModal);
+  const handleModalBtn = (event) => {
+    // console.log(showModal);
+    console.log(event.target.value)
     setShowModal((showModal) => !showModal);
   };
 
@@ -103,7 +104,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                   />
                   <button
                     style={{ border:"none"}}
-                    onClick={handleModalBtn}
+                    onClick={(event) => handleModalBtn(event)}
                   >
                     <AiOutlineQuestionCircle />
                   </button>
@@ -137,7 +138,7 @@ function RoomShow({ cableApp, updateApp, handleMessageUpdate, currentUser }) {
                       // float: "left"
                     }}
                   >
-                    @{user.username}
+                    {user.username}
                   </List.Header>
                 </List.Content>
               </List.Item>

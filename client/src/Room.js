@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
+import gif from './img/enter_room.gif';
 
 function Room({ currentUser }) {
   const { id } = useParams();
@@ -14,6 +15,7 @@ function Room({ currentUser }) {
 
   return (
     <Container className="enter-chatroom-container">
+      <img className="enter-gif" src={gif} alt="gif"/>
       {room && (
         <p className="chatroom-items">
           {" "}

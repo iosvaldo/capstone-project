@@ -8,6 +8,7 @@
 	padding: 0; */
   position: static;
   /* z-index: 1; */
+   border-bottom: 1px black solid;
 }
 
 .nav-list {
@@ -15,13 +16,15 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  margin: 1% 0 1% auto;
+  margin-top: .9%;
+  margin-bottom: 0;
+ 
 }
 
 .nav-items {
   text-decoration: none;
   font-family: "Inconsolata", monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgb(16, 20, 25);
 }
 
@@ -32,7 +35,7 @@
 .nav-button {
   text-decoration: none;
   font-family: "Inconsolata", monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;

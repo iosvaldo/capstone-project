@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdPassword } from "react-icons/md";
-import { BsPersonFill, BsPersonLinesFill } from "react-icons/bs";
+import { BsPersonFill, BsPersonLinesFill, BsCardImage } from "react-icons/bs";
 import PageSwitcher from "./PageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { Container, Alert } from "react-bootstrap";
+import logo from "./img/chat-icon-2.png";
+
 
 function Signup({ onSignup }) {
   const navigate = useNavigate();
@@ -77,6 +79,8 @@ function Signup({ onSignup }) {
         {errors.map((err) => (
           <Alert variant="danger">{err}</Alert>
         ))}
+        <img src={logo} style={{ width: "10%", margin: "auto" }} alt="logo" />
+
         <form onSubmit={(e) => handleSubmit(e)} className="formFields">
           <div className="formField">
             <label className="formFieldLabel" htmlFor="name">
@@ -136,15 +140,20 @@ function Signup({ onSignup }) {
               value={signupForm.passwordConfirmation}
               onChange={(e) => handleChange(e)}
             />
-            <input 
-            type="text"
-            id="enter-image"
-            placeholder="image URL"
-            required
-            name="image"
-            value={signupForm.image}
-            onChange={(e)=>handleChange(e)}>
-            </input>
+          </div>
+          <div className="formField">
+            <label className="formFieldLabel" htmlFor="image">
+              <BsCardImage /> Add Profile Image
+            </label>
+            <input
+              type="text"
+              id="enter-image"
+              placeholder="image URL"
+              required
+              name="image"
+              value={signupForm.image}
+              onChange={(e) => handleChange(e)}
+            ></input>
           </div>
 
           <div className="formField">

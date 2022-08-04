@@ -8,7 +8,7 @@ function Search({ search, setSearch }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         type="text"
-        placeholder=" 🔍 search users"
+        placeholder=" 🔍 users"
         onFocus={(e) => (e.target.placeholder = "")}
         onBlur={(e) => (e.target.placeholder = " 🔍 search users")}
       ></input>
