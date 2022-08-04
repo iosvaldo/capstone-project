@@ -90,6 +90,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+    # Added by Nyi Nyi
+  config.action_cable.url = "wss://dev-chat-osvaldo.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://dev-chat-osvaldo.herokuapp.com/', 'http://dev-chat-osvaldo.herokuapp.com/']
+
+  # Added by NyiNyi to set time zone
+  config.time_zone = 'Eastern Time (US & Canada)'
+
+ 
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
