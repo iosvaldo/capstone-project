@@ -13,3 +13,4 @@ class ChatroomsChannel < ApplicationCable::Channel
     stop_all_streams
   end
 end
+

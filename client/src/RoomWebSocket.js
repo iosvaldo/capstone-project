@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 function RoomWebSocket(props) {
   useEffect(() => {
-    // props.roomData
     props.cableApp.room = props.cableApp.cable.subscriptions.create(
       {
         channel: "ChatroomsChannel",
@@ -10,7 +9,6 @@ function RoomWebSocket(props) {
       },
       {
         received: (updatedRoom) => {
-          // props.updateApp(updatedRoom)
           props.actionUpdate(updatedRoom);
           console.log(updatedRoom);
         }
@@ -22,3 +20,4 @@ function RoomWebSocket(props) {
 }
 
 export default RoomWebSocket;
+
