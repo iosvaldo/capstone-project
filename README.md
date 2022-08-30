@@ -2,7 +2,7 @@
 
 ## Description
 
-This app has different chatrooms which provide real time communication using Action Cable and established Web Socket Connection, based on how you feel you can enter any chatroom.
+The inspiration behind this project is to build a place for Developers and Engineers to communicate. The application has a default chatroom, but users can create their chatroom, which will become available to any new user to join. Some of the included chatrooms are Front-end, Back-end, and general chatrooms. The chat application provided real-time communication using Action Cable and established Web Socket Connection.
 
 
 ## Requirements
